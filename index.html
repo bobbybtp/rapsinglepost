@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Training: SAP Joule Agentic AI, BTP & RAP</title>
+    <style>
+        :root {
+            --primary-blue: #004080;
+            --accent-orange: #ff6600;
+            --light-bg: #f9f9f9;
+            --text-dark: #333333;
+            --border-color: #e0e0e0;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f0f2f5;
+            color: var(--text-dark);
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        /* Header Section */
+        header {
+            background-color: var(--primary-blue);
+            color: #ffffff;
+            text-align: center;
+            padding: 30px 20px;
+        }
+
+        header h1 {
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+            letter-spacing: 0.5px;
+        }
+
+        header .sub-tags {
+            font-size: 1rem;
+            opacity: 0.9;
+            word-spacing: 2px;
+        }
+
+        /* Banner Section */
+        .batch-banner {
+            background-color: #0d233a;
+            color: #ffffff;
+            text-align: center;
+            padding: 15px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            border-bottom: 4px solid var(--accent-orange);
+        }
+
+        .batch-banner span {
+            color: #ff9955;
+            margin: 0 10px;
+        }
+
+        /* Content Grid */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+            padding: 30px;
+        }
+
+        @media (max-width: 768px) {
+            .grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .card {
+            background-color: #ffffff;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            padding: 25px;
+        }
+
+        .card h2 {
+            color: var(--primary-blue);
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            border-bottom: 2px solid var(--primary-blue);
+            padding-bottom: 5px;
+            text-transform: uppercase;
+        }
+
+        /* Instructor Stats */
+        .instructor-stats {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+            font-weight: bold;
+            color: #555;
+        }
+
+        .instructor-stats span {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .instructor-desc {
+            font-style: italic;
+            color: #666;
+        }
+
+        /* Lists */
+        ul {
+            list-style: none;
+        }
+
+        ul li {
+            position: relative;
+            padding-left: 25px;
+            margin-bottom: 12px;
+        }
+
+        ul li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #28a745;
+            font-weight: bold;
+        }
+
+        /* Pricing Table */
+        .price-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 10px;
+            border-left: 4px solid var(--primary-blue);
+            background-color: var(--light-bg);
+            margin-bottom: 10px;
+            border-radius: 0 4px 4px 0;
+        }
+
+        .price-value {
+            font-weight: bold;
+            color: dimgray;
+        }
+        
+        .price-value .inr {
+            color: var(--accent-orange);
+            font-size: 1.2rem;
+        }
+
+        /* Bonuses Section */
+        .bonuses-section {
+            padding: 0 30px 30px 30px;
+        }
+
+        .bonuses-section h2 {
+            color: var(--accent-orange);
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+        }
+
+        .bonus-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+        }
+
+        @media (max-width: 768px) {
+            .bonus-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .bonus-card {
+            background-color: #fffaf5;
+            border: 1px dashed var(--accent-orange);
+            padding: 15px;
+            border-radius: 6px;
+            font-size: 0.95rem;
+        }
+
+        .bonus-card strong {
+            color: var(--accent-orange);
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        /* Footer Section */
+        footer {
+            background-color: var(--accent-orange);
+            color: #ffffff;
+            text-align: center;
+            padding: 25px 20px;
+        }
+
+        footer .cta-text {
+            font-size: 1.1rem;
+            font-weight: bold;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        footer .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            font-size: 0.95rem;
+        }
+
+        footer .contact-info a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        footer .contact-info a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <h1>ONLINE TRAINING: SAP JOULE AGENTIC AI, BTP & RAP</h1>
+            <div class="sub-tags">
+                SAP Joule • Agentic AI • Document AI • SAP Build • BTP • RAP (On-Premise & Cloud) • ABAP on Cloud • Fiori Elements • S/4HANA Extensions
+            </div>
+        </header>
+
+        <!-- Batch Alert Banner -->
+        <div class="batch-banner">
+            📅 New Batch Starts: <span>September 7th, 2026</span> | ⏱ <span>45 Hours Full Course</span>
+        </div>
+
+        <!-- Main Content Grid -->
+        <div class="grid">
+            <!-- Instructor Profile -->
+            <div class="card">
+                <h2>Instructor Profile</h2>
+                <div class="instructor-stats">
+                    <span>⭐ 16 Years Experience</span>
+                    <span>🎓 4000+ Students</span>
+                </div>
+                <p class="instructor-desc">
+                    Bobby is a Senior SAP Consultant at a leading MNC, providing job-oriented technical training based completely on live real-time cloud implementation projects.
+                </p>
+            </div>
+
+            <!-- Why Choose This Course -->
+            <div class="card">
+                <h2>Why Choose This Course?</h2>
+                <ul>
+                    <li><strong>Real-Time Approach:</strong> Job-oriented use cases and application flows.</li>
+                    <li><strong>Weekly Checkpoints:</strong> Practical lab exercises assigned every Friday.</li>
+                    <li><strong>Complete Kits:</strong> Standard study notes, class diagrams, and interview Q&As.</li>
+                    <li><strong>Flexible Plan:</strong> Interactive live training with recording backup options.</li>
+                </ul>
+            </div>
+
+            <!-- Target Audience -->
+            <div class="card">
+                <h2>Target Audience</h2>
+                <ul>
+                    <li>Working Professionals looking to upskill in GenAI and SAP Cloud ecosystems.</li>
+                    <li>Freshers & SAP Consultants with a basic programming background.</li>
+                    <li>Learners from Below Average to Advanced technical skill levels.</li>
+                </ul>
+            </div>
+
+            <!-- Training Fees -->
+            <div class="card">
+                <h2>Training Fees</h2>
+                <div class="price-row">
+                    <span>Live Classes + Recordings:</span>
+                    <span class="price-value"><span class="inr">₹15,000</span> / $165</span>
+                </div>
+                <div class="price-row">
+                    <span>Recordings Access Only:</span>
+                    <span class="price-value"><span class="inr">₹9,500</span> / $105</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Included Free Bonuses -->
+        <div class="bonuses-section">
+            <h2>🎁 Included Free Bonuses</h2>
+            <div class="bonus-grid">
+                <div class="bonus-card">
+                    <strong>⚡ Free Pre-requisites</strong>
+                    Core ABAP, OOPs ABAP, and OData video recording servers.
+                </div>
+                <div class="bonus-card">
+                    <strong>🏗️ Capstone Project</strong>
+                    Complete end-to-end real-time production development in RAP.
+                </div>
+                <div class="bonus-card">
+                    <strong>📅 Long Term Support</strong>
+                    12-Month continuous viewing access to all class recordings.
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer / Registration Details -->
+        <footer>
+            <div class="cta-text">
+                👉 Registration Links and Free Demo Videos are in the post text below!
+            </div>
+            <div class="contact-info">
+                <span>📞 Contact: <strong>+91 8884473675</strong></span>
+                <span>💬 WhatsApp/Telegram: <strong>8884473675</strong></span>
+                <span>✉️ Email: <a href="mailto:bobby.sapui5@gmail.com"><strong>bobby.sapui5@gmail.com</strong></a></span>
+            </div>
+        </footer>
