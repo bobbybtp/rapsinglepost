@@ -13,157 +13,153 @@
             --text-dark: #2C3E50;
             --success-green: #2E7D32;
             --bonus-gold: #FFF9E6;
-            --card-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
         }
 
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        }
+
+        /* Forces the body to strictly lock at exactly 100% of the screen height */
+        html, body {
+            height: 100%;
+            overflow: hidden;
+            background: linear-gradient(135deg, #F0F4F8 0%, #E2E8F0 100%);
+            color: var(--text-dark);
         }
 
         body {
-            background: linear-gradient(135deg, #F0F4F8 0%, #E2E8F0 100%);
-            color: var(--text-dark);
-            line-height: 1.6;
-            padding: 40px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px;
         }
 
         .wrapper {
-            max-width: 1100px;
-            margin: 0 auto;
+            width: 100%;
+            max-width: 1200px;
+            height: calc(100vh - 20px);
             background-color: #ffffff;
-            border-radius: 16px;
-            box-shadow: var(--card-shadow);
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+            display: flex;
+            flex-direction: column;
             overflow: hidden;
         }
 
-        /* Hero Header Component */
+        /* Compressed Hero Header */
         header {
             background-color: var(--dark-navy);
             color: #ffffff;
             text-align: center;
-            padding: 45px 30px;
-            position: relative;
-        }
-
-        header::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: linear-gradient(90deg, var(--sap-blue), var(--accent-orange));
+            padding: 12px 20px;
+            border-bottom: 3px solid var(--sap-blue);
         }
 
         .live-badge {
             background-color: var(--accent-orange);
             color: white;
-            padding: 4px 14px;
+            padding: 2px 10px;
             border-radius: 20px;
-            font-size: 0.8rem;
+            font-size: 0.7rem;
             font-weight: 700;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 0.5px;
             display: inline-block;
-            margin-bottom: 15px;
+            margin-bottom: 4px;
         }
 
         header h1 {
-            font-size: 2.2rem;
+            font-size: 1.45rem;
             font-weight: 800;
-            letter-spacing: -0.5px;
-            margin-bottom: 15px;
+            margin-bottom: 6px;
         }
 
         .topics-ribbon {
             display: flex;
             justify-content: center;
-            gap: 8px;
+            gap: 4px;
             flex-wrap: wrap;
-            max-width: 900px;
-            margin: 0 auto;
         }
 
         .topic-pill {
             background: rgba(255, 255, 255, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.15);
-            padding: 6px 14px;
-            border-radius: 6px;
-            font-size: 0.85rem;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.75rem;
             color: #E2E8F0;
         }
 
-        /* Batch Details Notification Bar */
+        /* Direct Info Strip */
         .batch-bar {
             background-color: #051424;
             color: #ffffff;
-            padding: 16px 20px;
+            padding: 6px 20px;
             display: flex;
             justify-content: center;
-            align-items: center;
-            gap: 25px;
-            font-size: 1.05rem;
+            gap: 30px;
+            font-size: 0.85rem;
             font-weight: 600;
-            flex-wrap: wrap;
-            border-bottom: 1px solid #0d233a;
         }
 
         .batch-bar span strong {
             color: #FF9955;
         }
 
-        /* Responsive Dashboard Content Layout */
-        .content-grid {
+        /* 3-Column Fixed Height Main Grid Layout Workspace */
+        .main-layout {
+            flex: 1;
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 30px;
-            padding: 40px;
-            background-color: #ffffff;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+            padding: 12px;
+            overflow: hidden;
         }
 
-        @media (max-width: 768px) {
-            .content-grid {
-                grid-template-columns: 1fr;
-                padding: 20px;
-            }
+        .column-group {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            height: 100%;
         }
 
-        /* Premium Feature Box Elements */
+        /* Dashboard Content Box Panels */
         .dashboard-card {
             background: var(--light-blue-bg);
             border: 1px solid #E1E8ED;
-            border-radius: 12px;
-            padding: 30px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.01);
+            border-radius: 8px;
+            padding: 12px 15px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
 
         .dashboard-card h2 {
             color: var(--dark-navy);
-            font-size: 1.35rem;
+            font-size: 0.95rem;
             font-weight: 700;
-            margin-bottom: 20px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
+            margin-bottom: 8px;
+            border-bottom: 1px solid #D0DBE5;
+            padding-bottom: 4px;
         }
 
-        /* Instructor Specific Stats Design */
+        /* Profile Block Metrics */
         .instructor-header {
             display: flex;
-            gap: 15px;
-            margin-bottom: 15px;
+            gap: 8px;
+            margin-bottom: 8px;
         }
 
         .stat-badge {
             background: #ffffff;
             border: 1px solid #D0DBE5;
-            padding: 8px 16px;
-            border-radius: 8px;
+            padding: 4px 8px;
+            border-radius: 6px;
             font-weight: 700;
-            font-size: 0.9rem;
+            font-size: 0.75rem;
             color: var(--sap-blue);
             text-align: center;
             flex: 1;
@@ -171,63 +167,54 @@
 
         .instructor-bio {
             background-color: #ffffff;
-            border-left: 4px solid var(--sap-blue);
-            padding: 15px;
-            border-radius: 0 8px 8px 0;
+            border-left: 3px solid var(--sap-blue);
+            padding: 8px;
+            border-radius: 0 6px 6px 0;
             font-style: italic;
             color: #4A5568;
-            font-size: 0.95rem;
+            font-size: 0.8rem;
         }
 
-        /* Structured Checkmark Lists Component */
+        /* Compressed Checked Lists */
         .checkmark-list {
             list-style: none;
         }
 
         .checkmark-list li {
             position: relative;
-            padding-left: 28px;
-            margin-bottom: 14px;
-            font-size: 0.95rem;
+            padding-left: 18px;
+            margin-bottom: 6px;
+            font-size: 0.8rem;
         }
 
         .checkmark-list li::before {
             content: "✓";
             position: absolute;
             left: 0;
-            top: 1px;
-            background-color: #E2F0D9;
             color: var(--success-green);
-            width: 20px;
-            height: 20px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
             font-weight: 900;
-            font-size: 0.75rem;
         }
 
-        .checkmark-list li strong {
-            color: var(--dark-navy);
-        }
-
-        /* Modern Structured Price Matrix Component */
+        /* Training Fee Tables Component */
         .price-tier {
             display: flex;
             justify-content: space-between;
             align-items: center;
             background: #ffffff;
-            padding: 15px 20px;
-            border-radius: 10px;
-            margin-bottom: 12px;
+            padding: 8px 12px;
+            border-radius: 6px;
+            margin-bottom: 6px;
             border: 1px solid #E2E8F0;
-            border-left: 5px solid var(--dark-navy);
+            border-left: 4px solid var(--dark-navy);
+        }
+
+        .price-tier:last-child {
+            margin-bottom: 0;
         }
 
         .price-label {
             font-weight: 600;
-            font-size: 0.95rem;
+            font-size: 0.8rem;
             color: #4A5568;
         }
 
@@ -236,118 +223,87 @@
         }
 
         .price-inr {
-            font-size: 1.3rem;
-            font-weight: 800;
+            font-size: 1rem;
+            font-weight: 850;
             color: var(--accent-orange);
             display: block;
         }
 
         .price-usd {
-            font-size: 0.85rem;
+            font-size: 0.75rem;
             color: #718096;
-            font-weight: 600;
         }
 
-        /* Free Promotional Bonuses Matrix Segment Row */
-        .bonuses-wrapper {
-            padding: 0 40px 40px 40px;
-        }
-
-        @media (max-width: 768px) {
-            .bonuses-wrapper {
-                padding: 0 20px 20px 20px;
-            }
-        }
-
-        .bonuses-title {
-            color: var(--accent-orange);
-            font-size: 1.35rem;
-            font-weight: 700;
-            margin-bottom: 20px;
+        /* Gold Bonus Layout Components */
+        .bonus-box-layout {
             display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .bonuses-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-        }
-
-        @media (max-width: 768px) {
-            .bonuses-grid {
-                grid-template-columns: 1fr;
-            }
+            flex-direction: column;
+            gap: 6px;
+            flex: 1;
         }
 
         .bonus-item {
             background-color: var(--bonus-gold);
             border: 1px dashed #E6B800;
-            border-radius: 10px;
-            padding: 20px;
+            border-radius: 6px;
+            padding: 8px 12px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
 
         .bonus-item h3 {
             color: #B38F00;
-            font-size: 1.05rem;
+            font-size: 0.8rem;
             font-weight: 700;
-            margin-bottom: 8px;
-            display: flex;
-            align-items: center;
-            gap: 6px;
+            margin-bottom: 2px;
         }
 
         .bonus-item p {
-            font-size: 0.9rem;
+            font-size: 0.75rem;
             color: #5C5C5C;
         }
 
-        /* Conversion Lead Capturing Registration Footer Block */
+        /* Compressed Conversion Contact Ribbon Row */
         footer {
             background-color: var(--accent-orange);
             color: #ffffff;
-            padding: 35px 30px;
+            padding: 10px 20px;
             text-align: center;
+            border-top: 2px solid rgba(0,0,0,0.05);
         }
 
         footer .cta-heading {
-            font-size: 1.2rem;
+            font-size: 0.85rem;
             font-weight: 700;
-            margin-bottom: 20px;
+            margin-bottom: 6px;
             text-transform: uppercase;
-            letter-spacing: 0.5px;
         }
 
-        footer .contact-matrix {
+        .contact-matrix {
             display: flex;
             justify-content: center;
-            gap: 30px;
-            flex-wrap: wrap;
+            gap: 15px;
         }
 
-        footer .contact-matrix span {
-            background: rgba(0, 0, 0, 0.15);
-            padding: 8px 18px;
-            border-radius: 30px;
-            font-size: 0.95rem;
-            font-weight: 600;
+        .contact-matrix span {
+            background: rgba(0, 0, 0, 0.12);
+            padding: 3px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
         }
 
-        footer .contact-matrix a {
+        .contact-matrix a {
             color: #ffffff;
             text-decoration: none;
-        }
-
-        footer .contact-matrix a:hover {
-            text-decoration: underline;
         }
     </style>
 </head>
 <body>
-    <div class="wrapper">
+<div class="wrapper">
     
-    <!-- Hero Header -->
+    <!-- Hero Block Header -->
     <header>
         <span class="live-badge">Online Live Masterclass</span>
         <h1>ONLINE TRAINING: SAP JOULE AGENTIC AI, BTP & RAP</h1>
@@ -357,109 +313,104 @@
             <span class="topic-pill">Document AI</span>
             <span class="topic-pill">SAP Build</span>
             <span class="topic-pill">BTP</span>
-            <span class="topic-pill">RAP (On-Premise & Cloud)</span>
+            <span class="topic-pill">RAP</span>
             <span class="topic-pill">ABAP on Cloud</span>
             <span class="topic-pill">Fiori Elements</span>
-            <span class="topic-pill">S/4HANA Extensions</span>
         </div>
     </header>
 
-    <!-- Core Meta Course Specific Info Band -->
+    <!-- Info Substrip Bar -->
     <div class="batch-bar">
         <span>📅 New Batch Starts: <strong>September 7th, 2026</strong></span>
         <span>⏱ Duration: <strong>45 Hours Full Course</strong></span>
     </div>
 
-    <!-- Main Dynamic 2x2 Feature Layout Interface Block -->
-    <div class="content-grid">
+    <!-- Main Content Workspace Area Grid Layout -->
+    <div class="main-layout">
         
-        <!-- Profile Column Box Frame Card -->
-        <div class="dashboard-card">
-            <h2>👤 Instructor Profile</h2>
-            <div class="instructor-header">
-                <div class="stat-badge">⭐ 16 Years Experience</div>
-                <div class="stat-badge">🎓 4000+ Students</div>
+        <!-- Column 1: Profile & Fees Module Container -->
+        <div class="column-group">
+            <div class="dashboard-card">
+                <h2>👤 Instructor Profile</h2>
+                <div class="instructor-header">
+                    <div class="stat-badge">⭐ 16 Yrs Exp</div>
+                    <div class="stat-badge">🎓 4000+ Students</div>
+                </div>
+                <p class="instructor-bio">
+                    Bobby is a Senior SAP Consultant at a leading MNC, providing job-oriented technical implementation training.
+                </p>
             </div>
-            <p class="instructor-bio">
-                Bobby is a Senior SAP Consultant at a leading MNC, providing job-oriented technical training based completely on live real-time cloud implementation projects.
-            </p>
-        </div>
-
-        <!-- Course Selling Unique Highlights List Elements Card Container Block -->
-        <div class="dashboard-card">
-            <h2>🎯 Why Choose This Course?</h2>
-            <ul class="checkmark-list">
-                <li><strong>Real-Time Approach:</strong> Job-oriented use cases and application flows.</li>
-                <li><strong>Weekly Checkpoints:</strong> Practical lab exercises assigned every Friday.</li>
-                <li><strong>Complete Kits:</strong> Standard study notes, class diagrams, and interview Q&As.</li>
-                <li><strong>Flexible Plan:</strong> Interactive live training with recording backup options.</li>
-            </ul>
-        </div>
-        <!-- Audience Filters Block Card Block Segment Container -->
-        <div class="dashboard-card">
-            <h2>👥 Target Audience</h2>
-            <ul class="checkmark-list">
-                <li><strong>Professionals:</strong> Working Professionals looking to upskill in GenAI and SAP Cloud ecosystems.</li>
-                <li><strong>Beginners & Consultants:</strong> Freshers & SAP Consultants with a basic programming background.</li>
-                <li><strong>All Skill Levels:</strong> Learners from Below Average to Advanced technical skill levels.</li>
-            </ul>
-        </div>
-
-        <!-- Training Investment Fees Plan Tier List Box Grid Module Card Container -->
-        <div class="dashboard-card">
-            <h2>💳 Training Fees</h2>
             
-            <div class="price-tier">
-                <span class="price-label">Live Classes + Recordings</span>
-                <div class="price-tag">
-                    <span class="price-inr">₹15,000</span>
-                    <span class="price-usd">$165 USD</span>
+            <div class="dashboard-card">
+                <h2>💳 Training Investment Fees</h2>
+                <div class="price-tier">
+                    <span class="price-label">Live + Recordings</span>
+                    <div class="price-tag">
+                        <span class="price-inr">₹15,000</span>
+                        <span class="price-usd">$165 USD</span>
+                    </div>
+                </div>
+                <div class="price-tier">
+                    <span class="price-label">Recordings Only</span>
+                    <div class="price-tag">
+                        <span class="price-inr">₹9,500</span>
+                        <span class="price-usd">$105 USD</span>
+                    </div>
                 </div>
             </div>
+        </div>
 
-            <div class="price-tier">
-                <span class="price-label">Recordings Access Only</span>
-                <div class="price-tag">
-                    <span class="price-inr">₹9,500</span>
-                    <span class="price-usd">$105 USD</span>
+        <!-- Column 2: Highlights & Audience Lists Panels Container -->
+        <div class="column-group">
+            <div class="dashboard-card">
+                <h2>🎯 Why Choose This Course?</h2>
+                <ul class="checkmark-list">
+                    <li><strong>Real-Time Approach:</strong> Job-oriented use cases.</li>
+                    <li><strong>Weekly Checkpoints:</strong> Practical lab tasks every Friday.</li>
+                    <li><strong>Complete Kits:</strong> Study notes & interview Q&As.</li>
+                    <li><strong>Flexible Plan:</strong> Live training with record backups.</li>
+                </ul>
+            </div>
+            
+            <div class="dashboard-card">
+                <h2>👥 Target Audience Matrix</h2>
+                <ul class="checkmark-list">
+                    <li><strong>Professionals:</strong> Upskill in GenAI & SAP Cloud.</li>
+                    <li><strong>Consultants:</strong> Freshers with basic coding knowledge.</li>
+                    <li><strong>All Levels:</strong> Below Average to Advanced learners.</li>
+                </ul>
+            </div>
+        </div>
+        <!-- Column 3: Dashboard Promotional Free Addons Container -->
+        <div class="column-group">
+            <div class="dashboard-card" style="background-color: #fff;">
+                <h2>🎁 Included Free Bonuses</h2>
+                <div class="bonus-box-layout">
+                    <div class="bonus-item">
+                        <h3>⚡ Free Pre-requisites</h3>
+                        <p>Core ABAP, OOPs ABAP, and OData server access.</p>
+                    </div>
+                    <div class="bonus-item">
+                        <h3>🏗️ Capstone Project</h3>
+                        <p>Complete end-to-end production-ready RAP deployment.</p>
+                    </div>
+                    <div class="bonus-item">
+                        <h3>📅 Long Term Support</h3>
+                        <p>12-Month continuous access to all class materials.</p>
+                    </div>
                 </div>
             </div>
         </div>
 
     </div>
 
-    <!-- Free Addons Framework Matrix Section -->
-    <div class="bonuses-wrapper">
-        <h2 class="bonuses-title">🎁 Included Free Bonuses</h2>
-        <div class="bonuses-grid">
-            
-            <div class="bonus-item">
-                <h3>⚡ Free Pre-requisites</h3>
-                <p>Core ABAP, OOPs ABAP, and OData video recording servers to set up your baseline skills smoothly.</p>
-            </div>
-
-            <div class="bonus-item">
-                <h3>🏗️ Capstone Project</h3>
-                <p>Complete end-to-end real-time production-ready application development using modern RAP architecture.</p>
-            </div>
-
-            <div class="bonus-item">
-                <h3>📅 Long Term Support</h3>
-                <p>12-Month continuous on-demand viewing access to all live class recordings and resource servers.</p>
-            </div>
-
-        </div>
-    </div>
-
-    <!-- Call To Action Lead Registration Information Footer Ribbon Matrix Block -->
+    <!-- Contact Conversion Lead Ribbon Footer Section Row -->
     <footer>
-        <div class="cta-heading">
-            🚀 Registration Links & Free Demo Videos are in the post text description below!
-        </div>
+        <div class="cta-heading">🚀 Links & Free Demo Videos are in the description text below!</div>
         <div class="contact-matrix">
             <span>📞 Contact: <strong>+91 8884473675</strong></span>
-            <span>💬 WhatsApp/Telegram: <strong>8884473675</strong></span>
-            <span>✉️ Email: <a href="mailto:bobby.sapui5@gmail.com"><strong>bobby.sapui5@gmail.com</strong></a></span>
+            <span>💬 WhatsApp: <strong>8884473675</strong></span>
+            <span>✉️ <a href="mailto:bobby.sapui5@gmail.com"><strong>bobby.sapui5@gmail.com</strong></a></span>
         </div>
     </footer>
 
@@ -467,4 +418,3 @@
 
 </body>
 </html>
-
