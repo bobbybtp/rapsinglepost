@@ -3,30 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Online Training: SAP Joule Agentic AI, BTP & RAP</title>
+    <title>Online Masterclass: SAP Joule Agentic AI, BTP & RAP</title>
     <style>
         :root {
             --sap-blue: #0A66C2;
             --dark-navy: #001E3D;
             --light-blue-bg: #F4F8FA;
             --accent-orange: #FF6600;
-            --text-dark: #2C3E50;
-            --success-green: #2E7D32;
+            --text-dark: #1E293B;
+            --success-green: #16A34A;
         }
 
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
         }
 
-        /* Enforce absolute single screen layout boundary constraint limits */
+        /* Lock screen layout precisely to eliminate scrollbars and drag-down requirements */
         html, body {
             height: 100%;
             overflow: hidden;
             background: linear-gradient(135deg, #F0F4F8 0%, #E2E8F0 100%);
             color: var(--text-dark);
+            -webkit-font-smoothing: antialiased;
         }
 
         body {
@@ -38,68 +39,70 @@
 
         .wrapper {
             width: 100%;
-            max-width: 1100px;
+            max-width: 1200px;
             height: calc(100vh - 24px);
             background-color: #ffffff;
-            border-radius: 12px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+            border-radius: 14px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
             display: flex;
             flex-direction: column;
             overflow: hidden;
         }
 
-        /* Compressed Hero Block Header Frame */
+        /* Crisp Top Hero Branding Frame Component */
         header {
             background-color: var(--dark-navy);
             color: #ffffff;
             text-align: center;
-            padding: 12px 20px;
-            border-bottom: 3px solid var(--sap-blue);
+            padding: 14px 20px;
+            border-bottom: 4px solid var(--sap-blue);
         }
 
         .live-badge {
             background-color: var(--accent-orange);
             color: white;
-            padding: 2px 10px;
-            border-radius: 20px;
-            font-size: 0.7rem;
+            padding: 3px 12px;
+            border-radius: 4px;
+            font-size: 0.75rem;
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 0.5px;
             display: inline-block;
-            margin-bottom: 4px;
+            margin-bottom: 6px;
         }
 
         header h1 {
-            font-size: 1.4rem;
+            font-size: 1.75rem;
             font-weight: 800;
-            margin-bottom: 6px;
+            margin-bottom: 8px;
+            letter-spacing: -0.5px;
         }
 
         .topics-ribbon {
             display: flex;
             justify-content: center;
-            gap: 4px;
+            gap: 6px;
             flex-wrap: wrap;
         }
 
         .topic-pill {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 2px 8px;
+            background: rgba(255, 255, 255, 0.12);
+            padding: 3px 10px;
             border-radius: 4px;
-            font-size: 0.75rem;
-            color: #E2E8F0;
+            font-size: 0.8rem;
+            color: #F1F5F9;
+            font-weight: 500;
         }
 
-        /* Timeline Meta Strip Panel Subline Ribbon Row */
+        /* Scheduling Parameters Information Ribbon Row */
         .batch-bar {
             background-color: #051424;
             color: #ffffff;
-            padding: 6px 20px;
+            padding: 8px 20px;
             display: flex;
             justify-content: center;
-            gap: 30px;
-            font-size: 0.85rem;
+            gap: 40px;
+            font-size: 0.95rem;
             font-weight: 600;
         }
 
@@ -107,29 +110,32 @@
             color: #FF9955;
         }
 
-        /* Symmetrical 2-Column Compact Master Layout Workspace Matrix */
+        /* Balanced 2-Column Responsive Matrix Grid Workspace Layout */
         .main-layout {
             flex: 1;
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 12px;
-            padding: 12px;
+            grid-template-columns: 1fr 1.1fr;
+            gap: 14px;
+            padding: 14px;
             overflow: hidden;
         }
 
         .column-group {
             display: flex;
             flex-direction: column;
-            gap: 12px;
+            gap: 14px;
             height: 100%;
         }
-
-        /* Clean Dashboard Core Content Card Framework Boxes */
+    </style>
+</head>
+<body>
+    <style>
+        /* Modern High-Density Feature Card Components */
         .dashboard-card {
             background: var(--light-blue-bg);
-            border: 1px solid #E1E8ED;
-            border-radius: 8px;
-            padding: 12px 15px;
+            border: 1px solid #E2E8F0;
+            border-radius: 12px;
+            padding: 16px 20px;
             flex: 1;
             display: flex;
             flex-direction: column;
@@ -138,170 +144,241 @@
 
         .dashboard-card h2 {
             color: var(--dark-navy);
-            font-size: 0.95rem;
-            font-weight: 700;
-            margin-bottom: 6px;
-            border-bottom: 1px solid #D0DBE5;
-            padding-bottom: 4px;
+            font-size: 1.25rem;
+            font-weight: 800;
+            margin-bottom: 12px;
+            padding-bottom: 6px;
+            border-bottom: 2px solid #CBD5E1;
+            display: flex;
+            align-items: center;
+            gap: 8px;
         }
 
-        /* Instructor Stats Header Layout Subcomponents Block */
+        /* Instructor Specific Badges Elements Style */
         .instructor-header {
             display: flex;
-            gap: 8px;
-            margin-bottom: 6px;
+            gap: 10px;
+            margin-bottom: 12px;
         }
 
         .stat-badge {
             background: #ffffff;
-            border: 1px solid #D0DBE5;
-            padding: 4px;
-            border-radius: 6px;
+            border: 1px solid #CBD5E1;
+            padding: 6px 12px;
+            border-radius: 8px;
             font-weight: 700;
-            font-size: 0.75rem;
+            font-size: 0.85rem;
             color: var(--sap-blue);
             text-align: center;
             flex: 1;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
         }
 
         .instructor-bio {
             background-color: #ffffff;
-            border-left: 3px solid var(--sap-blue);
-            padding: 8px;
-            border-radius: 0 6px 6px 0;
+            border-left: 4px solid var(--sap-blue);
+            padding: 12px;
+            border-radius: 0 8px 8px 0;
             font-style: italic;
-            color: #4A5568;
-            font-size: 0.8rem;
+            color: #334155;
+            font-size: 0.95rem;
+            line-height: 1.5;
         }
 
-        /* Functional Compact Presentation Lists Components */
+        /* Clean Visual Anchor Custom List Elements Group */
         .checkmark-list {
             list-style: none;
         }
 
         .checkmark-list li {
             position: relative;
-            padding-left: 18px;
-            margin-bottom: 4px;
-            font-size: 0.8rem;
+            padding-left: 22px;
+            margin-bottom: 8px;
+            font-size: 0.95rem;
+            line-height: 1.4;
+            color: #334155;
+        }
+
+        .checkmark-list li strong {
+            color: var(--dark-navy);
+            font-weight: 700;
         }
 
         .checkmark-list li::before {
             content: "✓";
             position: absolute;
             left: 0;
+            top: 1px;
             color: var(--success-green);
             font-weight: 900;
+            font-size: 1rem;
         }
 
-        /* Lead Capture Contact Conversion Call-To-Action Bottom Footer Band Row */
+        /* Realtime High-Impact Conversion CTA Ribbon Layout Row Footnotes */
         footer {
             background-color: var(--accent-orange);
             color: #ffffff;
-            padding: 10px 20px;
+            padding: 12px 20px;
             text-align: center;
-            border-top: 2px solid rgba(0,0,0,0.05);
+            border-top: 1px solid rgba(0,0,0,0.05);
         }
 
         footer .cta-heading {
-            font-size: 0.85rem;
+            font-size: 0.95rem;
             font-weight: 700;
-            margin-bottom: 4px;
+            margin-bottom: 6px;
             text-transform: uppercase;
+            letter-spacing: 0.2px;
         }
 
         .contact-matrix {
             display: flex;
             justify-content: center;
-            gap: 15px;
+            gap: 20px;
         }
 
         .contact-matrix span {
             background: rgba(0, 0, 0, 0.12);
-            padding: 2px 12px;
+            padding: 4px 14px;
             border-radius: 20px;
-            font-size: 0.8rem;
+            font-size: 0.85rem;
+            font-weight: 600;
         }
 
         .contact-matrix a {
             color: #ffffff;
             text-decoration: none;
         }
-    </style>
-</head>
-<body>
-<div class="wrapper">
-    
-    <!-- Hero Block Header -->
-    <header>
-        <span class="live-badge">Online Live Masterclass</span>
-        <h1>ONLINE TRAINING: SAP JOULE AGENTIC AI, BTP & RAP</h1>
-        <div class="topics-ribbon">
-            <span class="topic-pill">SAP Joule</span>
-            <span class="topic-pill">Agentic AI</span>
-            <span class="topic-pill">Document AI</span>
-            <span class="topic-pill">SAP Build</span>
-            <span class="topic-pill">BTP</span>
-            <span class="topic-pill">RAP</span>
-            <span class="topic-pill">ABAP on Cloud</span>
-            <span class="topic-pill">Fiori Elements</span>
-        </div>
-    </header>
-
-    <!-- Info Substrip Bar -->
-    <div class="batch-bar">
-        <span>📅 New Batch Starts: <strong>September 7th, 2026</strong></span>
-        <span>⏱ Duration: <strong>45 Hours Full Course</strong></span>
-    </div>
-
-    <!-- Main Content Workspace Area Grid Layout -->
-    <div class="main-layout">
         
-        <!-- Left Side Column Stack Group Section -->
-        <div class="column-group">
-            <div class="dashboard-card">
-                <h2>👤 Instructor Profile</h2>
-                <div class="instructor-header">
-                    <div class="stat-badge">⭐ 16 Yrs Exp</div>
-                    <div class="stat-badge">🎓 4000+ Students</div>
-                </div>
-                <p class="instructor-bio">
-                    Bobby is a Senior SAP Consultant at a leading MNC, providing job-oriented technical implementation training.
-                </p>
+        .contact-matrix a:hover {
+            text-decoration: underline;
+        }
+    </style>
+
+    <div class="wrapper">
+        
+        <!-- Hero Header -->
+        <header>
+            <span class="live-badge">Online Live Masterclass</span>
+            <h1>ONLINE TRAINING: SAP JOULE AGENTIC AI, BTP & RAP</h1>
+            <div class="topics-ribbon">
+                <span class="topic-pill">SAP Joule</span>
+                <span class="topic-pill">Agentic AI</span>
+                <span class="topic-pill">Document AI</span>
+                <span class="topic-pill">SAP Build</span>
+                <span class="topic-pill">BTP</span>
+                <span class="topic-pill">RAP</span>
+                <span class="topic-pill">ABAP Cloud</span>
+                <span class="topic-pill">Fiori Elements</span>
             </div>
+        </header>
+
+        <!-- Meta Schedule Strip -->
+        <div class="batch-bar">
+            <span>📅 New Batch Starts: <strong>September 7th, 2026</strong></span>
+            <span>⏱ Duration: <strong>45 Hours Full Course</strong></span>
         </div>
 
-        <!-- Right Side Column Stack Group Section -->
-        <div class="column-group">
-            <div class="dashboard-card">
-                <h2>🎯 Why Choose This Course?</h2>
-                <ul class="checkmark-list">
-                    <li><strong>Real-Time Approach:</strong> Job-oriented use cases.</li>
-                    <li><strong>Weekly Checkpoints:</strong> Practical lab tasks every Friday.</li>
-                    <li><strong>Complete Kits:</strong> Study notes & interview Q&As.</li>
-                    <li><strong>Flexible Plan:</strong> Live training with record backups.</li>
-                </ul>
-            </div>
+        <!-- Main Content 2-Column Matrix Layout -->
+        <div class="main-layout">
             
-            <div class="dashboard-card">
-                <h2>👥 Target Audience Matrix</h2>
-                <ul class="checkmark-list">
-                    <li><strong>Professionals:</strong> Upskill in GenAI & SAP Cloud.</li>
-                    <li><strong>Consultants:</strong> Freshers with basic coding knowledge.</li>
-                    <li><strong>All Levels:</strong> Below Average to Advanced learners.</li>
-                </ul>
+            <!-- Left Side Column: Full-Height Expert Portfolio Profile Card Frame -->
+            <div class="column-group">
+                <div class="dashboard-card" style="justify-content: flex-start; padding-top: 24px;">
+                    <h2>👤 Instructor Profile</h2>
+                    <div class="instructor-header">
+                        <div class="stat-badge">⭐ 16 Yrs MNC Experience</div>
+                        <div class="stat-badge">🎓 4000+ Global Students</div>
+                    </div>
+                    <p class="instructor-bio">
+                        Bobby is a Senior SAP Consultant at a leading MNC, providing job-oriented technical implementation training based completely on live real-time cloud production blueprints.
+                    </p>
+                </div>
             </div>
-        </div>
 
+            <!-- Right Side Column: Symmetrical Stacked Value Proposition Feature Blocks -->
+            <div class="column-group">
+                <div class="dashboard-card">
+                    <h2>🎯 Trending 2026 Core Curriculum</h2>
+                    <ul class="checkmark-list">
+                        <li><strong>Joule Studio Agent Builder:</strong> Orchestrate multi-step workflows & RAG configurations.</li>
+                        <li><strong>Advanced RAP Architecture:</strong> Master unmanaged scenarios, locking mechanisms & side effects.</li>
+                        <li><strong>Transactional Blueprints:</strong> Implement draft capabilities, actions, and custom validations.</li>
+                        <li><strong>Clean Core Extensibility:</strong> Build custom behavior, node, and cloud data model extensions.</li>
+                    </ul>
+                </div>
+                
+                <div class="dashboard-card">
+                    <h2>👥 Target Audience Criteria</h2>
+                    <ul class="checkmark-list">
+                        <li><strong>Traditional ABAPers:</strong> Transition smoothly into certified BTP Cloud Architecture roles.</li>
+                        <li><strong>Functional Consultants:</strong> Master custom Joule skills, workflows, and extension mapping.</li>
+                        <li><strong>Ambitious Freshers:</strong> Gain comprehensive, live production-level portfolio experience.</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    <style>
+        /* Modern Horizontal Bonuses Ribbon Array Base Stack */
+        .bonuses-ribbon-group {
+            display: flex;
+            gap: 12px;
+            padding: 0 14px 14px 14px;
+            background-color: #ffffff;
+        }
+
+        .bonus-ribbon-card {
+            background-color: #FFF9E6;
+            border: 1px dashed #E6B800;
+            border-radius: 8px;
+            padding: 10px 14px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .bonus-ribbon-card h3 {
+            color: #B38F00;
+            font-size: 0.9rem;
+            font-weight: 700;
+            margin-bottom: 2px;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .bonus-ribbon-card p {
+            font-size: 0.8rem;
+            color: #5C5C5C;
+            line-height: 1.3;
+        }
+    </style>
+
+    <!-- Horizontal Bonuses Banner Frame Section Container -->
+    <div class="bonuses-ribbon-group">
+        <div class="bonus-ribbon-card">
+            <h3>🎁 Free Pre-requisites</h3>
+            <p>On-demand Core ABAP, OOPs ABAP, and OData server recording banks to build your foundations.</p>
+        </div>
+        <div class="bonus-ribbon-card">
+            <h3>🏗️ Capstone Project</h3>
+            <p>End-to-end production-quality implementation application deployment inside the RAP framework.</p>
+        </div>
+        <div class="bonus-ribbon-card">
+            <h3>📅 Long Term Support</h3>
+            <p>12-Month full unrestricted viewing access to class materials and cloud resource logs.</p>
+        </div>
     </div>
 
-    <!-- Contact Conversion Lead Ribbon Footer Section Row Section Block Close -->
+    <!-- Call-To-Action Registration Footer Close -->
     <footer>
-        <div class="cta-heading">🚀 Links & Free Demo Videos are in the description text below!</div>
+        <div class="cta-heading">🚀 Registration Links & Free Demo Videos are in the description text below!</div>
         <div class="contact-matrix">
             <span>📞 Contact: <strong>+91 8884473675</strong></span>
             <span>💬 WhatsApp: <strong>8884473675</strong></span>
-            <span>✉️ <a href="mailto:bobby.sapui5@gmail.com"><strong>bobby.sapui5@gmail.com</strong></a></span>
+            <span>✉️ Email: <a href="mailto:bobby.sapui5@gmail.com"><strong>bobby.sapui5@gmail.com</strong></a></span>
         </div>
     </footer>
 
