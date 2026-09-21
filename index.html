@@ -21,7 +21,7 @@
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
         }
 
-        /* LOCKED: Forced single-screen layout matrix with hidden overflow for perfect screenshots */
+        /* LOCKED: Single-screen layout matrix optimized for clean, high-impact screenshots */
         html, body {
             height: 100%;
             overflow: hidden;
@@ -54,56 +54,56 @@
             background-color: var(--dark-navy);
             color: #ffffff;
             text-align: center;
-            padding: 8px 20px;
+            padding: 10px 20px;
             border-bottom: 4px solid var(--sap-blue);
         }
 
         .live-badge {
             background-color: var(--accent-orange);
             color: white;
-            padding: 2px 10px;
+            padding: 2px 12px;
             border-radius: 4px;
-            font-size: 0.7rem;
-            font-weight: 700;
+            font-size: 0.8rem;
+            font-weight: 800;
             text-transform: uppercase;
             letter-spacing: 0.5px;
             display: inline-block;
-            margin-bottom: 4px;
+            margin-bottom: 6px;
         }
 
         header h1 {
-            font-size: 1.4rem;
+            font-size: 1.55rem;
             font-weight: 800;
-            margin-bottom: 4px;
+            margin-bottom: 6px;
             letter-spacing: -0.5px;
         }
 
         .topics-ribbon {
             display: flex;
             justify-content: center;
-            gap: 5px;
+            gap: 6px;
             flex-wrap: wrap;
         }
 
         .topic-pill {
-            background: rgba(255, 255, 255, 0.12);
-            padding: 2px 8px;
+            background: rgba(255, 255, 255, 0.15);
+            padding: 3px 10px;
             border-radius: 4px;
-            font-size: 0.75rem;
-            color: #F1F5F9;
-            font-weight: 500;
+            font-size: 0.82rem;
+            color: #ffffff;
+            font-weight: 700;
         }
 
         /* Scheduling Parameters Information Ribbon Row */
         .batch-bar {
             background-color: #051424;
             color: #ffffff;
-            padding: 6px 20px;
+            padding: 8px 20px;
             display: flex;
             justify-content: center;
-            gap: 40px;
-            font-size: 0.85rem;
-            font-weight: 600;
+            gap: 50px;
+            font-size: 0.95rem;
+            font-weight: 700;
         }
 
         .batch-bar span strong {
@@ -114,16 +114,16 @@
         .main-layout {
             flex: 1;
             display: grid;
-            grid-template-columns: 1fr 1.2fr;
-            gap: 10px;
-            padding: 10px;
+            grid-template-columns: 1fr 1.25fr;
+            gap: 12px;
+            padding: 12px;
             overflow: hidden;
         }
 
         .column-group {
             display: flex;
             flex-direction: column;
-            gap: 10px;
+            gap: 12px;
             height: 100%;
             overflow: hidden;
         }
@@ -136,7 +136,7 @@
             background: var(--light-blue-bg);
             border: 1px solid #E2E8F0;
             border-radius: 10px;
-            padding: 10px 14px;
+            padding: 12px 18px;
             flex: 1;
             display: flex;
             flex-direction: column;
@@ -144,36 +144,34 @@
             overflow: hidden;
         }
 
-        /* Special Marketing Callout Styles */
+        /* CHANGED: Increased banner typography visibility */
         .marketing-banner {
             background: #FFF5ED;
-            border: 1.5px dashed var(--accent-orange);
+            border: 2px dashed var(--accent-orange);
             border-radius: 8px;
-            padding: 10px 12px;
-            margin-bottom: 2px;
+            padding: 12px;
             text-align: center;
         }
 
         .marketing-banner h3 {
-            color: #D946EF;
             color: var(--accent-orange);
-            font-size: 1rem;
+            font-size: 1.05rem;
             font-weight: 800;
             margin-bottom: 4px;
         }
 
         .marketing-banner p {
-            font-size: 0.82rem;
-            line-height: 1.35;
-            color: #334155;
-            font-weight: 600;
+            font-size: 0.88rem;
+            line-height: 1.4;
+            color: #1E293B;
+            font-weight: 700;
         }
 
         .dashboard-card h2 {
             color: var(--dark-navy);
-            font-size: 1.05rem;
+            font-size: 1.15rem;
             font-weight: 800;
-            margin-bottom: 6px;
+            margin-bottom: 8px;
             padding-bottom: 4px;
             border-bottom: 2px solid #CBD5E1;
             display: flex;
@@ -181,53 +179,115 @@
             gap: 6px;
         }
 
-        /* Instructor Specific Badges Elements Style */
+        .mentor-profile-container {
+            display: flex;
+            gap: 14px;
+            align-items: center;
+            margin-top: 4px;
+        }
+
+        .mentor-photo-frame {
+            width: 75px;
+            height: 75px;
+            border-radius: 50%;
+            border: 2.5px solid var(--sap-blue);
+            background-color: #E2E8F0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            flex-shrink: 0;
+            overflow: hidden;
+        }
+
         .instructor-header {
             display: flex;
-            gap: 6px;
+            gap: 8px;
             margin-bottom: 6px;
+            width: 100%;
         }
 
         .stat-badge {
             background: #ffffff;
             border: 1px solid #CBD5E1;
-            padding: 4px;
+            padding: 5px;
             border-radius: 6px;
-            font-weight: 700;
-            font-size: 0.78rem;
+            font-weight: 800;
+            font-size: 0.82rem;
             color: var(--sap-blue);
             text-align: center;
             flex: 1;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
         }
 
+        /* CHANGED: Boosted biography readability text properties */
         .instructor-bio {
             background-color: #ffffff;
             border-left: 4px solid var(--sap-blue);
-            padding: 8px 10px;
+            padding: 8px 12px;
             border-radius: 0 6px 6px 0;
             font-style: italic;
-            color: #334155;
-            font-size: 0.82rem;
-            line-height: 1.35;
+            color: #1E293B;
+            font-size: 0.88rem;
+            line-height: 1.4;
+            font-weight: 500;
         }
 
-        /* Clean Visual Anchor Custom List Elements Group */
+        .diagram-mock-frame {
+            border: 1px solid #CBD5E1;
+            border-radius: 6px;
+            background: #ffffff;
+            height: 55px;
+            margin-top: auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.85rem;
+            font-weight: 800;
+            color: var(--sap-blue);
+            background-image: linear-gradient(to right, #f0f4f8 1px, transparent 1px), linear-gradient(to bottom, #f0f4f8 1px, transparent 1px);
+            background-size: 10px 10px;
+        }
+
+        .project-visual-row {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 8px;
+            margin-top: 6px;
+        }
+
+        .project-badge-card {
+            background: #F8FAFC;
+            border: 1.5px solid #E2E8F0;
+            border-radius: 6px;
+            padding: 8px 4px;
+            text-align: center;
+        }
+
+        .project-badge-card div {
+            font-size: 1.3rem;
+            margin-bottom: 2px;
+        }
+
+        .project-badge-card p {
+            font-size: 0.78rem;
+            font-weight: 800;
+            color: var(--dark-navy);
+            line-height: 1.25;
+        }
+
         .checkmark-list {
             list-style: none;
         }
 
+        /* CHANGED: Increased layout checkmark list items formatting dimensions */
         .checkmark-list li {
             position: relative;
-            padding-left: 18px;
-            margin-bottom: 5px;
-            font-size: 0.8rem;
-            line-height: 1.3;
+            padding-left: 20px;
+            margin-bottom: 6px;
+            font-size: 0.88rem;
+            line-height: 1.35;
             color: #334155;
-        }
-
-        .checkmark-list li:last-child {
-            margin-bottom: 0;
+            font-weight: 500;
         }
 
         .checkmark-list li strong {
@@ -242,13 +302,11 @@
             top: 0px;
             color: var(--success-green);
             font-weight: 900;
-            font-size: 0.85rem;
+            font-size: 0.95rem;
         }
     </style>
 
     <div class="wrapper">
-        
-        <!-- Hero Header -->
         <header>
             <span class="live-badge">Online Live Masterclass</span>
             <h1>ONLINE TRAINING: SAP JOULE AGENTIC AI, BTP & RAP</h1>
@@ -264,32 +322,36 @@
             </div>
         </header>
 
-        <!-- Meta Schedule Strip -->
         <div class="batch-bar">
             <span>📅 New Batch Starts: <strong>October 12th, 2026</strong></span>
             <span>⏱ Duration: <strong>45 Hours Full Course</strong></span>
         </div>
 
-        <!-- Main Content Matrix Layout -->
         <div class="main-layout">
-            
             <!-- Left Side Column -->
             <div class="column-group">
-                <!-- NEW PUNCHY MARKETING HEADER BANNER INCLUDED DIRECTLY ON FLYER -->
                 <div class="marketing-banner">
                     <h3>💥 STOP LEARNING SAP THEORY. START BUILDING REAL-TIME PROJECTS! 💥</h3>
-                    <p>If you aren't building Agentic AI workflows and mastering SAP Build/RAP in 2026, you are leaving high-paying MNC opportunities on the table. Transform from a Traditional ABAPer into a highly-certified BTP Cloud Architect!</p>
+                    <p>If you aren't building Agentic AI workflows and mastering SAP Build/RAP in 2026, you are leaving high-paying MNC opportunities on the table.</p>
                 </div>
 
-                <div class="dashboard-card" style="justify-content: flex-start; padding-top: 10px;">
+                <div class="dashboard-card" style="justify-content: flex-start;">
                     <h2>👤 Meet Your Mentor</h2>
-                    <div class="instructor-header">
-                        <div class="stat-badge">⭐ 16+ Yrs MNC Experience</div>
-                        <div class="stat-badge">🎓 4000+ Global Students</div>
+                    <div class="mentor-profile-container">
+                        <div class="mentor-photo-frame">👨‍💻</div>
+                        <div style="flex: 1;">
+                            <div class="instructor-header">
+                                <div class="stat-badge">⭐ 16+ Yrs MNC Exp</div>
+                                <div class="stat-badge">🎓 4000+ Students</div>
+                            </div>
+                            <p class="instructor-bio">
+                                Bobby is a Senior SAP Consultant working at a top MNC with 16+ years of real-time experience and training excellence.
+                            </p>
+                        </div>
                     </div>
-                    <p class="instructor-bio">
-                        Bobby is a Senior SAP Consultant working at a top MNC with 16+ years of real-time experience and a track reason of driving success for over 4,000+ successful students trained globally!
-                    </p>
+                    <div class="diagram-mock-frame">
+                        📊 Live Architecture Pipeline: Joule AI ➔ BTP Cockpit ➔ RAP Core
+                    </div>
                 </div>
             </div>
 
@@ -298,28 +360,39 @@
                 <div class="dashboard-card">
                     <h2>🎯 Trending 2026 Core Curriculum</h2>
                     <ul class="checkmark-list">
-                        <li><strong>Joule Studio Agent Builder & RAP:</strong> Deep dive into multi-step workflows & RAG configurations.</li>
-                        <li><strong>SAP Document AI:</strong> Cloud service that extracts business data from unstructured documents.</li>
-                        <li><strong>Advanced RAP Architecture:</strong> Master unmanaged scenarios, locking mechanisms & side effects.</li>
-                        <li><strong>Transactional Blueprints:</strong> Implement draft capabilities, actions, and validations.</li>
-                        <li><strong>Clean Core Extensibility:</strong> Build custom behavior and cloud model extensions that companies are hunting for.</li>
+                        <li><strong>Joule Studio Agent Builder & RAP:</strong> Workflows & RAG configurations.</li>
+                        <li><strong>SAP Document AI:</strong> Extracting business data from unstructured documents.</li>
+                        <li><strong>Advanced RAP Architecture:</strong> Master unmanaged scenarios & locking mechanisms.</li>
+                        <li><strong>Clean Core Extensibility:</strong> Custom behaviors and cloud extensions.</li>
                     </ul>
                 </div>
                 
                 <div class="dashboard-card" style="border: 1.5px solid var(--sap-blue); background-color: #ffffff;">
                     <h2>💎 What You Get Inside This Masterclass?</h2>
-                    <ul class="checkmark-list">
-                        <li><strong>✅ 3 Live, Production-Quality Projects:</strong> Built completely from scratch during live class sessions inside the RAP framework.</li>
-                        <li><strong>100% Clean Core Compliant:</strong> Master the precise modern architectural skills that elite MNC networks look for.</li>
-                        <li><strong>Job-Ready Code Portfolio:</strong> Walk away with production repositories and cloud system architecture diagrams to present confidently.</li>
-                        <li><strong>Interactive Career Strategy:</strong> Receive structural resume reviews and architecture mock sessions tailored for modern hiring.</li>
+                    <ul class="checkmark-list" style="margin-bottom: 4px;">
+                        <li><strong>100% Clean Core Compliant:</strong> Modern architectural enterprise skills.</li>
+                        <li><strong>Job-Ready Code Portfolio:</strong> Walk away with active system repositories.</li>
                     </ul>
+                    
+                    <div class="project-visual-row">
+                        <div class="project-badge-card">
+                            <div>🤖</div>
+                            <p>Project 1<br>Joule AI Agent</p>
+                        </div>
+                        <div class="project-badge-card">
+                            <div>📄</div>
+                            <p>Project 2<br>Document AI</p>
+                        </div>
+                        <div class="project-badge-card">
+                            <div>🌐</div>
+                            <p>Project 3<br>RAP Pipeline</p>
+                        </div>
+                    </div>
                 </div>
             </div>
-
         </div>
     <style>
-        /* Modern Horizontal Bonuses Ribbon Array Base Stack */
+        /* CHANGED: Boosted lower ribbon descriptions and text density sizes */
         .bonuses-ribbon-group {
             display: flex;
             gap: 10px;
@@ -331,7 +404,7 @@
             background-color: #FFF9E6;
             border: 1px dashed #E6B800;
             border-radius: 6px;
-            padding: 6px 10px;
+            padding: 6px 12px;
             flex: 1;
             display: flex;
             flex-direction: column;
@@ -340,8 +413,8 @@
 
         .bonus-ribbon-card h3 {
             color: #B38F00;
-            font-size: 0.8rem;
-            font-weight: 700;
+            font-size: 0.88rem;
+            font-weight: 800;
             margin-bottom: 2px;
             display: flex;
             align-items: center;
@@ -349,23 +422,23 @@
         }
 
         .bonus-ribbon-card p {
-            font-size: 0.72rem;
-            color: #5C5C5C;
-            line-height: 1.25;
+            font-size: 0.78rem;
+            color: #475569;
+            line-height: 1.3;
+            font-weight: 600;
         }
 
-        /* Realtime High-Impact Conversion CTA Ribbon Layout Row Footnotes */
         footer {
             background-color: var(--accent-orange);
             color: #ffffff;
-            padding: 8px 20px;
+            padding: 10px 20px;
             text-align: center;
             border-top: 1px solid rgba(0,0,0,0.05);
         }
 
         footer .cta-heading {
-            font-size: 0.82rem;
-            font-weight: 700;
+            font-size: 0.88rem;
+            font-weight: 800;
             margin-bottom: 4px;
             text-transform: uppercase;
             letter-spacing: 0.1px;
@@ -378,11 +451,11 @@
         }
 
         .contact-matrix span {
-            background: rgba(0, 0, 0, 0.12);
-            padding: 3px 10px;
+            background: rgba(0, 0, 0, 0.15);
+            padding: 4px 14px;
             border-radius: 20px;
-            font-size: 0.78rem;
-            font-weight: 600;
+            font-size: 0.82rem;
+            font-weight: 700;
         }
 
         .contact-matrix a {
@@ -395,11 +468,10 @@
         }
     </style>
 
-    <!-- Horizontal Bonuses Banner Frame Section Container -->
     <div class="bonuses-ribbon-group">
         <div class="bonus-ribbon-card">
             <h3>🎁 INCLUDED BONUSES: Free Pre-requisites</h3>
-            <p>FREE pre-requisite recording banks (Core ABAP, OOPs ABAP, and OData) to build your solid foundations.</p>
+            <p>FREE pre-requisite recording banks (Core ABAP, OOPs, and OData) to build foundations.</p>
         </div>
         <div class="bonus-ribbon-card">
             <h3>🏗️ Capstone Project</h3>
@@ -407,11 +479,10 @@
         </div>
         <div class="bonus-ribbon-card">
             <h3>📅 Long Term Support</h3>
-            <p>12 Months of unrestricted viewing access to class materials and cloud resource logs.</p>
+            <p>12 Months of unrestricted viewing access to class materials and cloud logs.</p>
         </div>
     </div>
 
-    <!-- Call-To-Action Registration Footer Close -->
     <footer>
         <div class="cta-heading">⚡ Spots are strictly limited to ensure interactive support! Click link below to watch Free Demos!</div>
         <div class="contact-matrix">
