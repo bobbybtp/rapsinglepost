@@ -3,31 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Online Masterclass: SAP Joule Agentic AI, BTP, FIORI & RAP</title>
+    <title>SAP Joule Agentic AI Masterclass</title>
     <style>
         :root {
-            --sap-blue: #0A66C2;
+            --primary-blue: #0056B3;
             --dark-navy: #001E3D;
-            --light-blue-bg: #F4F8FA;
-            --accent-orange: #FF6600;
+            --bright-blue: #00A3FF;
+            --accent-orange: #FF4500;
+            --text-light: #FFFFFF;
             --text-dark: #1E293B;
-            --success-green: #16A34A;
+            --card-bg: #F8FAFC;
         }
 
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
         }
 
-        /* LOCKED: Single-screen layout matrix optimized for clean, high-impact screenshots */
         html, body {
             height: 100%;
             overflow: hidden;
-            background: linear-gradient(135deg, #F0F4F8 0%, #E2E8F0 100%);
+            background: #0B192C;
             color: var(--text-dark);
-            -webkit-font-smoothing: antialiased;
         }
 
         body {
@@ -37,462 +36,512 @@
             padding: 10px;
         }
 
-        .wrapper {
+        /* Canvas Wrapper with Dynamic Angular Geometric Background Elements */
+        .banner-canvas {
             width: 100%;
             max-width: 1200px;
             height: calc(100vh - 20px);
-            background-color: #ffffff;
-            border-radius: 12px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            background: linear-gradient(135deg, #002244 0%, #004488 60%, #0066CC 100%);
+            position: relative;
+            border-radius: 16px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
             display: flex;
             flex-direction: column;
             overflow: hidden;
         }
 
-        /* Crisp Top Hero Branding Frame Component */
-        header {
-            background-color: var(--dark-navy);
-            color: #ffffff;
-            text-align: center;
-            padding: 10px 20px;
-            border-bottom: 4px solid var(--sap-blue);
+        .banner-canvas::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 45%;
+            height: 100%;
+            background: linear-gradient(25deg, rgba(0, 163, 255, 0.15) 0%, rgba(0, 0, 0, 0) 70%);
+            pointer-events: none;
+        }
+
+        /* Top Header Component */
+        .header-container {
+            padding: 20px 30px 10px 30px;
+            z-index: 2;
+        }
+
+        .brand-ribbon {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 12px;
         }
 
         .live-badge {
-            background-color: var(--accent-orange);
+            background: var(--accent-orange);
             color: white;
-            padding: 2px 12px;
-            border-radius: 4px;
-            font-size: 0.8rem;
-            font-weight: 800;
+            padding: 4px 14px;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 900;
             text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 4px 10px rgba(255, 69, 0, 0.4);
+            animation: pulse 2s infinite;
+        }
+
+        .sub-tagline {
+            color: var(--bright-blue);
+            font-weight: 700;
+            font-size: 0.95rem;
             letter-spacing: 0.5px;
-            display: inline-block;
-            margin-bottom: 6px;
         }
 
-        header h1 {
-            font-size: 1.55rem;
+        .main-title {
+            color: var(--text-light);
+            font-size: 2.2rem;
             font-weight: 800;
-            margin-bottom: 6px;
+            line-height: 1.1;
+            text-transform: uppercase;
             letter-spacing: -0.5px;
+            margin-bottom: 6px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
         }
 
-        .topics-ribbon {
+        .main-title span {
+            color: var(--bright-blue);
+        }
+
+        .core-desc {
+            color: #E2E8F0;
+            font-size: 1.05rem;
+            font-weight: 600;
+            max-width: 700px;
+            margin-bottom: 12px;
+        }
+
+        /* Topics Pill Cloud Bar */
+        .topics-cloud {
             display: flex;
-            justify-content: center;
             gap: 6px;
             flex-wrap: wrap;
         }
 
-        .topic-pill {
-            background: rgba(255, 255, 255, 0.15);
-            padding: 3px 10px;
-            border-radius: 4px;
-            font-size: 0.82rem;
-            color: #ffffff;
+        .topic-tag {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            padding: 4px 12px;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            color: #F1F5F9;
             font-weight: 700;
+            backdrop-filter: blur(5px);
         }
-
-        /* Scheduling Parameters Information Ribbon Row */
-        .batch-bar {
-            background-color: #051424;
-            color: #ffffff;
-            padding: 8px 20px;
-            display: flex;
-            justify-content: center;
-            gap: 50px;
-            font-size: 0.95rem;
-            font-weight: 700;
-        }
-
-        .batch-bar span strong {
-            color: #FF9955;
-        }
-
-        /* Balanced 2-Column Responsive Matrix Grid Layout */
-        .main-layout {
+        /* Central Split Screen Workspace Matrix */
+        .center-matrix {
             flex: 1;
             display: grid;
-            grid-template-columns: 1fr 1.25fr;
-            gap: 12px;
-            padding: 12px;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 20px;
+            padding: 10px 30px;
+            align-items: center;
+            z-index: 2;
             overflow: hidden;
         }
 
-        .column-group {
+        /* Left Side: Dynamic Data List Cards */
+        .details-pane {
             display: flex;
             flex-direction: column;
             gap: 12px;
-            height: 100%;
-            overflow: hidden;
         }
-    </style>
-</head>
-<body>
-    <style>
-        /* Modern High-Density Feature Card Components */
-        .dashboard-card {
-            background: var(--light-blue-bg);
-            border: 1px solid #E2E8F0;
-            border-radius: 10px;
-            padding: 12px 18px;
-            flex: 1;
+
+        .schedule-strip {
+            background: rgba(255, 255, 255, 0.08);
+            border-left: 4px solid var(--bright-blue);
+            padding: 10px 16px;
+            border-radius: 0 8px 8px 0;
             display: flex;
-            flex-direction: column;
-            justify-content: center;
-            overflow: hidden;
+            gap: 30px;
+            color: white;
+            font-size: 0.95rem;
         }
 
-        /* CHANGED: Increased banner typography visibility */
-        .marketing-banner {
-            background: #FFF5ED;
-            border: 2px dashed var(--accent-orange);
-            border-radius: 8px;
-            padding: 12px;
-            text-align: center;
+        .schedule-strip strong {
+            color: #FFB84D;
         }
 
-        .marketing-banner h3 {
-            color: var(--accent-orange);
+        .curriculum-box {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 12px;
+            padding: 16px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+
+        .curriculum-box h3 {
             font-size: 1.05rem;
-            font-weight: 800;
-            margin-bottom: 4px;
-        }
-
-        .marketing-banner p {
-            font-size: 0.88rem;
-            line-height: 1.4;
-            color: #1E293B;
-            font-weight: 700;
-        }
-
-        .dashboard-card h2 {
             color: var(--dark-navy);
-            font-size: 1.15rem;
-            font-weight: 800;
-            margin-bottom: 8px;
+            margin-bottom: 10px;
+            border-bottom: 2px solid #E2E8F0;
             padding-bottom: 4px;
-            border-bottom: 2px solid #CBD5E1;
+        }
+
+        .bullet-list {
+            list-style: none;
+        }
+
+        .bullet-list li {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 8px;
+            font-size: 0.88rem;
+            color: #334155;
+            font-weight: 500;
+            line-height: 1.3;
+        }
+
+        .bullet-list li strong {
+            color: var(--dark-navy);
+        }
+
+        .bullet-list li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #10B981;
+            font-weight: 900;
+        }
+
+        .mentor-inline-card {
+            background: rgba(0, 20, 40, 0.6);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 10px;
+            padding: 10px 14px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: white;
+        }
+
+        .avatar-circle {
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, var(--bright-blue), var(--primary-blue));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+        }
+
+        .mentor-stats {
+            display: flex;
+            gap: 8px;
+            margin-top: 2px;
+        }
+
+        .mini-badge {
+            background: rgba(255,255,255,0.15);
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 0.72rem;
+            font-weight: 700;
+            color: #E2E8F0;
+        }
+
+        /* Right Side: Device Mockup Workspace Graphic Frame */
+        .mockup-pane {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+        }
+
+        .laptop-frame {
+            width: 100%;
+            max-width: 440px;
+            background: #222;
+            border-radius: 12px 12px 0 0;
+            padding: 10px;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.4);
+            position: relative;
+        }
+
+        .laptop-screen {
+            background: #001529;
+            aspect-ratio: 16 / 10;
+            border-radius: 4px;
+            padding: 12px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            border: 2px solid #444;
+        }
+
+        .screen-header {
+            color: white;
+            text-align: center;
+            font-size: 0.85rem;
+            font-weight: 800;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            padding-bottom: 4px;
+        }
+
+        .brim-network {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 8px;
+            margin: auto 0;
+        }
+
+        .node-item {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(0, 163, 255, 0.3);
+            border-radius: 6px;
+            padding: 8px 4px;
+            text-align: center;
+            color: white;
+        }
+
+        .node-item div { font-size: 1.1rem; margin-bottom: 2px; }
+        .node-item p { font-size: 0.65rem; font-weight: 700; color: #94A3B8; }
+
+        .node-item.center-node {
+            background: rgba(0, 163, 255, 0.2);
+            border: 1px solid var(--bright-blue);
+        }
+        .node-item.center-node p { color: white; }
+
+        .laptop-base {
+            width: calc(100% + 40px);
+            height: 12px;
+            background: #e2e8f0;
+            border-radius: 0 0 8px 8px;
+            position: absolute;
+            bottom: -12px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        }
+
+        .floating-alert-badge {
+            position: absolute;
+            top: 10px;
+            right: -10px;
+            background: var(--accent-orange);
+            color: white;
+            padding: 8px 12px;
+            border-radius: 8px;
+            font-weight: 900;
+            font-size: 0.8rem;
+            transform: rotate(8deg);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+            text-align: center;
+            line-height: 1.2;
+        }
+        /* Lower Row: High Value Target Bonuses and Features */
+        .value-ribbon {
+            background: rgba(255, 255, 255, 0.05);
+            border-top: 1px solid rgba(255,255,255,0.1);
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            padding: 10px 30px;
+            gap: 15px;
+            z-index: 2;
+        }
+
+        .value-feature-card {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            color: white;
+        }
+
+        .value-icon {
+            font-size: 1.3rem;
+            background: rgba(255,255,255,0.1);
+            width: 32px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 6px;
+            flex-shrink: 0;
+        }
+
+        .value-feature-card h4 {
+            font-size: 0.82rem;
+            color: #FFB84D;
+            margin-bottom: 1px;
+        }
+
+        .value-feature-card p {
+            font-size: 0.75rem;
+            color: #CBD5E1;
+            line-height: 1.2;
+        }
+
+        /* CTA Conversion Bottom Footer Component */
+        .footer-action-bar {
+            background: #001E3D;
+            padding: 12px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 3px solid var(--bright-blue);
+            z-index: 2;
+        }
+
+        .footer-action-bar .cta-prompt {
+            color: white;
+            font-weight: 800;
+            font-size: 0.88rem;
+        }
+
+        .contact-flex-matrix {
+            display: flex;
+            gap: 12px;
+        }
+
+        .contact-pill-item {
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            padding: 5px 14px;
+            border-radius: 50px;
+            color: white;
+            font-size: 0.8rem;
+            font-weight: 700;
             display: flex;
             align-items: center;
             gap: 6px;
         }
 
-        .mentor-profile-container {
-            display: flex;
-            gap: 14px;
-            align-items: center;
-            margin-top: 4px;
-        }
+        .contact-pill-item strong { color: var(--bright-blue); }
+        .contact-pill-item a { color: white; text-decoration: none; }
 
-        .mentor-photo-frame {
-            width: 75px;
-            height: 75px;
-            border-radius: 50%;
-            border: 2.5px solid var(--sap-blue);
-            background-color: #E2E8F0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2rem;
-            flex-shrink: 0;
-            overflow: hidden;
-        }
-
-        .instructor-header {
-            display: flex;
-            gap: 8px;
-            margin-bottom: 6px;
-            width: 100%;
-        }
-
-        .stat-badge {
-            background: #ffffff;
-            border: 1px solid #CBD5E1;
-            padding: 5px;
-            border-radius: 6px;
-            font-weight: 800;
-            font-size: 0.82rem;
-            color: var(--sap-blue);
-            text-align: center;
-            flex: 1;
-        }
-
-        /* CHANGED: Boosted biography readability text properties */
-        .instructor-bio {
-            background-color: #ffffff;
-            border-left: 4px solid var(--sap-blue);
-            padding: 8px 12px;
-            border-radius: 0 6px 6px 0;
-            font-style: italic;
-            color: #1E293B;
-            font-size: 0.88rem;
-            line-height: 1.4;
-            font-weight: 500;
-        }
-
-        .diagram-mock-frame {
-            border: 1px solid #CBD5E1;
-            border-radius: 6px;
-            background: #ffffff;
-            height: 55px;
-            margin-top: auto;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 0.85rem;
-            font-weight: 800;
-            color: var(--sap-blue);
-            background-image: linear-gradient(to right, #f0f4f8 1px, transparent 1px), linear-gradient(to bottom, #f0f4f8 1px, transparent 1px);
-            background-size: 10px 10px;
-        }
-
-        .project-visual-row {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 8px;
-            margin-top: 6px;
-        }
-
-        .project-badge-card {
-            background: #F8FAFC;
-            border: 1.5px solid #E2E8F0;
-            border-radius: 6px;
-            padding: 8px 4px;
-            text-align: center;
-        }
-
-        .project-badge-card div {
-            font-size: 1.3rem;
-            margin-bottom: 2px;
-        }
-
-        .project-badge-card p {
-            font-size: 0.78rem;
-            font-weight: 800;
-            color: var(--dark-navy);
-            line-height: 1.25;
-        }
-
-        .checkmark-list {
-            list-style: none;
-        }
-
-        /* CHANGED: Increased layout checkmark list items formatting dimensions */
-        .checkmark-list li {
-            position: relative;
-            padding-left: 20px;
-            margin-bottom: 6px;
-            font-size: 0.88rem;
-            line-height: 1.35;
-            color: #334155;
-            font-weight: 500;
-        }
-
-        .checkmark-list li strong {
-            color: var(--dark-navy);
-            font-weight: 700;
-        }
-
-        .checkmark-list li::before {
-            content: "✓";
-            position: absolute;
-            left: 0;
-            top: 0px;
-            color: var(--success-green);
-            font-weight: 900;
-            font-size: 0.95rem;
+        @keyframes pulse {
+            0% { transform: scale(1); box-shadow: 0 4px 10px rgba(255, 69, 0, 0.4); }
+            50% { transform: scale(1.03); box-shadow: 0 4px 20px rgba(255, 69, 0, 0.6); }
+            100% { transform: scale(1); box-shadow: 0 4px 10px rgba(255, 69, 0, 0.4); }
         }
     </style>
-
-    <div class="wrapper">
-        <header>
-            <span class="live-badge">Online Live Masterclass</span>
-            <h1>ONLINE TRAINING: SAP JOULE AGENTIC AI, BTP & RAP</h1>
-            <div class="topics-ribbon">
-                <span class="topic-pill">SAP Joule</span>
-                <span class="topic-pill">Agentic AI</span>
-                <span class="topic-pill">Document AI</span>
-                <span class="topic-pill">SAP Build</span>
-                <span class="topic-pill">BTP</span>
-                <span class="topic-pill">RAP</span>
-                <span class="topic-pill">ABAP Cloud</span>
-                <span class="topic-pill">Fiori</span>
+</head>
+<body>
+    <div class="banner-canvas">
+        
+        <!-- Header Info Content Block -->
+        <header class="header-container">
+            <div class="brand-ribbon">
+                <span class="live-badge">Free Live Demo</span>
+                <span class="sub-tagline">Your SAP Career Starts Here!</span>
+            </div>
+            <h1 class="main-title">SAP Joule <span>Agentic AI & RAP</span></h1>
+            <p class="core-desc">Master Production-Grade Workflows, Document AI & Clean Core Extensibility Architecture.</p>
+            
+            <div class="topics-cloud">
+                <span class="topic-tag">SAP Joule</span>
+                <span class="topic-tag">Agentic AI</span>
+                <span class="topic-tag">Document AI</span>
+                <span class="topic-tag">SAP Build</span>
+                <span class="topic-tag">BTP</span>
+                <span class="topic-tag">RAP</span>
+                <span class="topic-tag">ABAP Cloud</span>
+                <span class="topic-tag">Fiori</span>
             </div>
         </header>
 
-        <div class="batch-bar">
-            <span>📅 New Batch Starts: <strong>October 12th, 2026</strong></span>
-            <span>⏱ Duration: <strong>45 Hours Full Course</strong></span>
-        </div>
-
-        <div class="main-layout">
-            <!-- Left Side Column -->
-            <div class="column-group">
-                <div class="marketing-banner">
-                    <h3>💥 STOP LEARNING SAP THEORY. START BUILDING REAL-TIME PROJECTS! 💥</h3>
-                    <p>If you aren't building Agentic AI workflows and mastering SAP Build/RAP in 2026, you are leaving high-paying MNC opportunities on the table.</p>
+        <!-- Main Structural Columns Block -->
+        <main class="center-matrix">
+            
+            <!-- Left Side Details Pane -->
+            <div class="details-pane">
+                <div class="schedule-strip">
+                    <span>📅 Date: <strong>October 12th, 2026</strong></span>
+                    <span>⏰ Time: <strong>7:00 PM IST</strong></span>
+                    <span>⏱ Duration: <strong>45 Hours</strong></span>
                 </div>
 
-                <div class="dashboard-card" style="justify-content: flex-start;">
-                    <h2>👤 Meet Your Mentor</h2>
-                    <div class="mentor-profile-container">
-                        <div class="mentor-photo-frame">👨‍💻</div>
-                        <div style="flex: 1;">
-                            <div class="instructor-header">
-                                <div class="stat-badge">⭐ 16+ Yrs MNC Exp</div>
-                                <div class="stat-badge">🎓 4000+ Students</div>
-                            </div>
-                            <p class="instructor-bio">
-                                Bobby is a Senior SAP Consultant working at a top MNC with 16+ years of real-time experience and training excellence.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="diagram-mock-frame">
-                        📊 Live Architecture Pipeline: Joule AI ➔ BTP Cockpit ➔ RAP Core
-                    </div>
-                </div>
-            </div>
-
-            <!-- Right Side Column -->
-            <div class="column-group">
-                <div class="dashboard-card">
-                    <h2>🎯 Trending 2026 Core Curriculum</h2>
-                    <ul class="checkmark-list">
+                <div class="curriculum-box">
+                    <h3>🎯 Trending 2026 Core Curriculum</h3>
+                    <ul class="bullet-list">
                         <li><strong>Joule Studio Agent Builder & RAP:</strong> Workflows & RAG configurations.</li>
                         <li><strong>SAP Document AI:</strong> Extracting business data from unstructured documents.</li>
                         <li><strong>Advanced RAP Architecture:</strong> Master unmanaged scenarios & locking mechanisms.</li>
                         <li><strong>Clean Core Extensibility:</strong> Custom behaviors and cloud extensions.</li>
                     </ul>
                 </div>
-                
-                <div class="dashboard-card" style="border: 1.5px solid var(--sap-blue); background-color: #ffffff;">
-                    <h2>💎 What You Get Inside This Masterclass?</h2>
-                    <ul class="checkmark-list" style="margin-bottom: 4px;">
-                        <li><strong>100% Clean Core Compliant:</strong> Modern architectural enterprise skills.</li>
-                        <li><strong>Job-Ready Code Portfolio:</strong> Walk away with active system repositories.</li>
-                    </ul>
-                    
-                    <div class="project-visual-row">
-                        <div class="project-badge-card">
-                            <div>🤖</div>
-                            <p>Project 1<br>Joule AI Agent</p>
-                        </div>
-                        <div class="project-badge-card">
-                            <div>📄</div>
-                            <p>Project 2<br>Document AI</p>
-                        </div>
-                        <div class="project-badge-card">
-                            <div>🌐</div>
-                            <p>Project 3<br>RAP Pipeline</p>
+
+                <div class="mentor-inline-card">
+                    <div class="avatar-circle">👨‍💻</div>
+                    <div>
+                        <h4 style="font-size: 0.9rem; font-weight: 800;">Meet Your Mentor: Bobby</h4>
+                        <p style="font-size: 0.78rem; color: #94A3B8;">Senior SAP Consultant at a Top MNC</p>
+                        <div class="mentor-stats">
+                            <span class="mini-badge">⭐ 16+ Yrs Experience</span>
+                            <span class="mini-badge">🎓 4000+ Alumni</span>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    <style>
-        /* CHANGED: Boosted lower ribbon descriptions and text density sizes */
-        .bonuses-ribbon-group {
-            display: flex;
-            gap: 10px;
-            padding: 0 10px 10px 10px;
-            background-color: #ffffff;
-        }
+            <!-- Right Side Graphic Workspace Mockup Pane -->
+            <div class="mockup-pane">
+                <div class="laptop-frame">
+                    <div class="laptop-screen">
+                        <div class="screen-header">JOULE AGENTIC ARCHITECTURE</div>
+                        
+                        <div class="brim-network">
+                            <div class="node-item"><div>🤖</div><p>Agentic AI</p></div>
+                            <div class="node-item"><div>📄</div><p>Doc AI</p></div>
+                            <div class="node-item"><div>⚙️</div><p>BTP Cockpit</p></div>
+                            <div class="node-item"><div>📊</div><p>Fiori UI</p></div>
+                            <div class="node-item center-node"><div>💎</div><p>RAP Core</p></div>
+                            <div class="node-item"><div>☁️</div><p>Clean Core</p></div>
+                        </div>
+                        
+                        <div style="color: var(--bright-blue); font-size: 0.65rem; text-align: center; font-weight: 800; letter-spacing: 0.5px;">
+                            Live Architecture Pipeline Demo
+                        </div>
+                    </div>
+                    <div class="laptop-base"></div>
+                </div>
 
-        .bonus-ribbon-card {
-            background-color: #FFF9E6;
-            border: 1px dashed #E6B800;
-            border-radius: 6px;
-            padding: 6px 12px;
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
+                <div class="floating-alert-badge">
+                    LIMITED SEATS<br>AVAILABLE!
+                </div>
+            </div>
+        </main>
 
-        .bonus-ribbon-card h3 {
-            color: #B38F00;
-            font-size: 0.88rem;
-            font-weight: 800;
-            margin-bottom: 2px;
-            display: flex;
-            align-items: center;
-            gap: 4px;
-        }
+        <!-- Lower Value Highlights Row Ribbon -->
+        <section class="value-ribbon">
+            <div class="value-feature-card">
+                <div class="value-icon">🎁</div>
+                <div>
+                    <h4>Included Bonuses</h4>
+                    <p>Free Pre-requisite recording banks (Core ABAP, OOPs, OData).</p>
+                </div>
+            </div>
+            <div class="value-feature-card">
+                <div class="value-icon">🏗️</div>
+                <div>
+                    <h4>Capstone Project</h4>
+                    <p>End-to-end production implementation deployment.</p>
+                </div>
+            </div>
+            <div class="value-feature-card">
+                <div class="value-icon">🛡️</div>
+                <div>
+                    <h4>Long Term Support</h4>
+                    <p>12 Months of unrestricted viewing access & cloud logs.</p>
+                </div>
+            </div>
+        </section>
 
-        .bonus-ribbon-card p {
-            font-size: 0.78rem;
-            color: #475569;
-            line-height: 1.3;
-            font-weight: 600;
-        }
+        <!-- Interactive Footer Action Strip Container -->
+        <footer class="footer-action-bar">
+            <div class="cta-prompt">⚡ Message "JOULE DEMO" to get your demo link!</div>
+            <div class="contact-flex-matrix">
+                <div class="contact-pill-item">📞 Call: <strong>+91 8884473675</strong></div>
+                <div class="contact-pill-item">💬 WhatsApp: <strong>8884473675</strong></div>
+                <div class="contact-pill-item">✉️ <a href="mailto:bobby.sapui5@gmail.com">bobby.sapui5@gmail.com</a></div>
+            </div>
+        </footer>
 
-        footer {
-            background-color: var(--accent-orange);
-            color: #ffffff;
-            padding: 10px 20px;
-            text-align: center;
-            border-top: 1px solid rgba(0,0,0,0.05);
-        }
-
-        footer .cta-heading {
-            font-size: 0.88rem;
-            font-weight: 800;
-            margin-bottom: 4px;
-            text-transform: uppercase;
-            letter-spacing: 0.1px;
-        }
-
-        .contact-matrix {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-        }
-
-        .contact-matrix span {
-            background: rgba(0, 0, 0, 0.15);
-            padding: 4px 14px;
-            border-radius: 20px;
-            font-size: 0.82rem;
-            font-weight: 700;
-        }
-
-        .contact-matrix a {
-            color: #ffffff;
-            text-decoration: none;
-        }
-        
-        .contact-matrix a:hover {
-            text-decoration: underline;
-        }
-    </style>
-
-    <div class="bonuses-ribbon-group">
-        <div class="bonus-ribbon-card">
-            <h3>🎁 INCLUDED BONUSES: Free Pre-requisites</h3>
-            <p>FREE pre-requisite recording banks (Core ABAP, OOPs, and OData) to build foundations.</p>
-        </div>
-        <div class="bonus-ribbon-card">
-            <h3>🏗️ Capstone Project</h3>
-            <p>End-to-end production-quality implementation deployment inside the RAP framework.</p>
-        </div>
-        <div class="bonus-ribbon-card">
-            <h3>📅 Long Term Support</h3>
-            <p>12 Months of unrestricted viewing access to class materials and cloud logs.</p>
-        </div>
     </div>
-
-    <footer>
-        <div class="cta-heading">⚡ Spots are strictly limited to ensure interactive support! Click link below to watch Free Demos!</div>
-        <div class="contact-matrix">
-            <span>📞 Contact: <strong>+91 8884473675</strong></span>
-            <span>💬 WhatsApp: <strong>8884473675</strong></span>
-            <span>✉️ Email: <a href="mailto:bobby.sapui5@gmail.com"><strong>bobby.sapui5@gmail.com</strong></a></span>
-        </div>
-    </footer>
-
-</div>
-
 </body>
 </html>
