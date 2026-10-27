@@ -126,7 +126,7 @@
             max-width: 240px;
             line-height: 1.2;
         }
-        /* Two-Column Matrix Workspace Workspace */
+        /* Two-Column Matrix Workspace Layout */
         .workspace-grid {
             flex: 1;
             display: grid;
@@ -146,7 +146,6 @@
             justify-content: center;
         }
 
-        /* NEW CONTENT CHUNK: Stylized Dotted Target Warning Alert Box Style */
         .theory-warning-banner {
             background: #FFF5ED;
             border: 1.5px dashed var(--accent-orange);
@@ -172,7 +171,23 @@
             font-weight: 600;
         }
 
-        /* NEW CONTENT CHUNK: Unified Custom Check Benefits List Card Container */
+        /* RESTORED ELEMENT STYLING: Scheduling Parameter Information Ribbon Row */
+        .datetime-strip {
+            background: #F0F7FF;
+            border: 1px dashed var(--sky-blue);
+            border-radius: 10px;
+            padding: 10px 16px;
+            display: flex;
+            gap: 40px;
+            font-size: 0.88rem;
+            font-weight: 700;
+            color: var(--dark-navy);
+        }
+
+        .datetime-strip span strong {
+            color: #E65C00;
+        }
+
         .info-white-card {
             background: #FFFFFF;
             border-radius: 14px;
@@ -219,8 +234,6 @@
             font-weight: 900;
             font-size: 0.95rem;
         }
-
-        /* NEW CONTENT CHUNK: Upgraded Mentor Panel Profile Element Styles */
         .mentor-profile-bar {
             display: flex;
             flex-direction: column;
@@ -290,7 +303,8 @@
             padding-left: 10px;
             font-style: italic;
         }
-        /* Right Side: Symmetrical Connected Constellation Panel Graphics */
+
+        /* Right Side Diagram Pane */
         .diagram-pane {
             position: relative;
             display: flex;
@@ -362,7 +376,6 @@
         }
 
         .satellite-node:hover {
-            transform: scale(1.05);
             border-color: var(--accent-orange);
             box-shadow: 0 8px 20px rgba(255,51,0,0.12);
         }
@@ -370,7 +383,6 @@
         .satellite-node .icon { font-size: 1.05rem; margin-bottom: 1px; }
         .satellite-node .lbl { font-size: 0.62rem; font-weight: 800; color: var(--dark-navy); line-height: 1.15; }
 
-        /* Perfect Spatial Ring Radii Coordinates */
         .pos-1 { top: -8px; left: 142px; }
         .pos-2 { top: 60px; right: -8px; }
         .pos-3 { bottom: 60px; right: -8px; }
@@ -510,13 +522,17 @@
             <!-- Left Info Content Pane Column -->
             <div class="left-content-pane">
                 
-                <!-- FIXED: Injected the new dynamic warning dotted block -->
                 <div class="theory-warning-banner">
                     <h3>💥 STOP LEARNING SAP THEORY. START BUILDING REAL-TIME PROJECTS! 💥</h3>
                     <p>If you aren't building Agentic AI workflows and mastering SAP Build/RAP in 2026, you are leaving high-paying MNC opportunities on the table. Transform from a Traditional ABAPer into a highly-certified BTP Cloud Architect!</p>
                 </div>
 
-                <!-- FIXED: Injected the new comprehensive 4-bullet Master benefits card -->
+                <!-- RESTORED: Horizontal Batch Parameter Information Ribbon Row -->
+                <div class="datetime-strip">
+                    <span>📅 New Batch Starts: <strong>October 12th, 2026</strong></span>
+                    <span>⏱ Duration: <strong>45 Hours Full Course</strong></span>
+                </div>
+
                 <div class="info-white-card">
                     <h3>🔷 What You Get Inside This Masterclass?</h3>
                     <ul class="custom-check-list">
@@ -527,7 +543,6 @@
                     </ul>
                 </div>
 
-                <!-- FIXED: Injected the new expanded 4,000+ student Mentor authority block -->
                 <div class="mentor-profile-bar">
                     <div class="mentor-header-row">
                         <div class="mentor-title-area">
