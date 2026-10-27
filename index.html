@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SAP Joule Agentic AI Poster</title>
+    <title>Online Masterclass: SAP Joule Agentic AI, BTP & RAP</title>
     <style>
         :root {
             --sap-blue: #0066CC;
@@ -12,6 +12,7 @@
             --dark-navy: #002244;
             --bg-light: #FFFFFF;
             --text-main: #1E293B;
+            --success-green: #16A34A;
             --card-shadow: 0 15px 35px rgba(0, 102, 204, 0.08);
         }
 
@@ -35,7 +36,7 @@
             padding: 10px;
         }
 
-        /* Pure White/Blue Gradient Marketing Canvas Wrapper */
+        /* Marketing Canvas Wrapper */
         .poster-canvas {
             width: 100%;
             max-width: 1200px;
@@ -43,13 +44,13 @@
             background: var(--bg-light);
             position: relative;
             border-radius: 20px;
-            box-shadow: 0 25px 60px rgba(0, 34, 68, 0.12);
+            box-shadow: 0 25px 60 rgba(0, 34, 68, 0.12);
             display: flex;
             flex-direction: column;
             overflow: hidden;
         }
 
-        /* Organic Blue Background Waves mimicking reference image style */
+        /* Abstract Blue Vector Wave Background */
         .poster-canvas::before {
             content: "";
             position: absolute;
@@ -62,7 +63,7 @@
             z-index: 1;
         }
 
-        /* Top Header Layout Component */
+        /* Top Header Component Layout */
         .header-section {
             padding: 25px 40px 5px 40px;
             display: flex;
@@ -75,23 +76,24 @@
             max-width: 70%;
         }
 
-        /* Dynamically angled Yellow/Orange Live Ribbon */
-        .live-demo-ribbon {
-            background: linear-gradient(90deg, #FFCC00 0%, #FF3300 100%);
+        /* FIXED: Updated marketing ribbon configuration to match Masterclass requirement */
+        .live-masterclass-ribbon {
+            background: var(--dark-navy);
             color: white;
-            padding: 6px 24px;
-            border-radius: 50px 0 50px 0;
+            padding: 6px 20px;
+            border-radius: 4px;
             font-size: 0.85rem;
-            font-weight: 900;
+            font-weight: 800;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 0.5px;
             display: inline-block;
             margin-bottom: 8px;
-            box-shadow: 0 4px 15px rgba(255, 51, 0, 0.25);
+            border-bottom: 3px solid var(--accent-orange);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
         }
 
         .title-h1 {
-            font-size: 2.6rem;
+            font-size: 2.5rem;
             font-weight: 900;
             color: var(--dark-navy);
             line-height: 1.1;
@@ -111,7 +113,8 @@
             color: #475569;
             font-weight: 600;
         }
-        /* Floating Career Callout Bubble (Top Right Style) */
+
+        /* Floating Career Callout Bubble */
         .career-callout {
             background: linear-gradient(135deg, var(--sky-blue) 0%, var(--sap-blue) 100%);
             color: white;
@@ -126,7 +129,7 @@
             line-height: 1.2;
         }
 
-        /* Two-Column Workspace Layout */
+        /* Two-Column Matrix Workspace */
         .workspace-grid {
             flex: 1;
             display: grid;
@@ -144,7 +147,7 @@
             gap: 14px;
         }
 
-        /* Time & Date Parameters Horizontal Bar */
+        /* Session Time Parameters Strip */
         .datetime-strip {
             background: #F0F7FF;
             border: 1px dashed var(--sky-blue);
@@ -161,7 +164,7 @@
             color: var(--sap-blue);
         }
 
-        /* Curriculum & Mentor White Cards */
+        /* Info Display Content Cards */
         .info-white-card {
             background: #FFFFFF;
             border-radius: 16px;
@@ -178,6 +181,7 @@
             padding-bottom: 6px;
         }
 
+        /* FIXED: Restored clean custom green checkmark formatting rules */
         .custom-check-list {
             list-style: none;
         }
@@ -201,12 +205,12 @@
             content: "✓";
             position: absolute;
             left: 0;
-            color: #059669;
+            color: var(--success-green);
             font-weight: 900;
-            font-size: 1rem;
+            font-size: 1.05rem;
         }
 
-        /* Mentor Profile Summary Element */
+        /* Mentor Profile Summary Row Element */
         .mentor-profile-bar {
             display: flex;
             align-items: center;
@@ -255,7 +259,8 @@
             font-weight: 700;
             color: var(--sap-blue);
         }
-        /* Right Side: Symmetrical Connected Node Space Graphics */
+
+        /* Right Side: Orbital Connected Constellation Layout mapping */
         .diagram-pane {
             position: relative;
             display: flex;
@@ -273,7 +278,7 @@
             justify-content: center;
         }
 
-        /* Dashed Orbit Rings */
+        /* Dashed Orbit Trace Ring Vector */
         .orbit-line {
             position: absolute;
             border: 2px dashed rgba(0, 102, 204, 0.12);
@@ -283,7 +288,7 @@
             pointer-events: none;
         }
 
-        /* Central Target Brand Hub Node */
+        /* Central Brand Platform Hub Node */
         .central-hub-node {
             width: 120px;
             height: 120px;
@@ -311,7 +316,7 @@
             margin-top: 2px;
         }
 
-        /* Satellite Orbital Circular Nodes Mapping - Optimized Coordinates */
+        /* Satellite Orbital Circular Nodes Spacing Matrix */
         .satellite-node {
             position: absolute;
             width: 82px;
@@ -338,7 +343,7 @@
         .satellite-node .icon { font-size: 1.1rem; margin-bottom: 2px; }
         .satellite-node .lbl { font-size: 0.65rem; font-weight: 800; color: var(--dark-navy); line-height: 1.15; }
 
-        /* Symmetrical outer radius tracking layout mapping */
+        /* Space Coordinates for Symmetrical Positioning */
         .pos-1 { top: -5px; left: 159px; }
         .pos-2 { top: 70px; right: -5px; }
         .pos-3 { bottom: 70px; right: -5px; }
@@ -370,6 +375,7 @@
             border: 3px dashed #FFFFFF;
             animation: bounce 3s infinite alternate;
         }
+
         /* Lower Features Graphic High-Value Highlights Row */
         .features-grid-ribbon {
             background: #F8FAFC;
@@ -426,6 +432,7 @@
             z-index: 2;
         }
 
+        /* FIXED: Updated design parameters for Masterclass CTA messaging rules */
         .action-footer-strip .cta-message-box {
             background: #FFCC00;
             color: var(--dark-navy);
@@ -466,12 +473,14 @@
     </style>
 </head>
 <body>
+
     <div class="poster-canvas">
         
-        <!-- Header Text and Callouts Section -->
+        <!-- Header Section -->
         <header class="header-section">
             <div class="brand-container">
-                <span class="live-demo-ribbon">🔥 Free Live Demo</span>
+                <!-- FIXED: Changed badge theme content to Masterclass -->
+                <span class="live-masterclass-ribbon">🌐 Online Live Masterclass</span>
                 <h1 class="title-h1">SAP Joule <span>Agentic AI & RAP</span></h1>
                 <p class="subtitle-p">Build. Extend. Innovate. Your Next Step in SAP Technology!</p>
             </div>
@@ -480,21 +489,21 @@
             </div>
         </header>
 
-        <!-- Central Interactive Columns Content Grid -->
+        <!-- Central Matrix View Space -->
         <main class="workspace-grid">
             
-            <!-- Left Information Details Side -->
+            <!-- Left Info Content Column -->
             <div class="left-content-pane">
                 <div class="datetime-strip">
                     <span>📅 Date: <strong>October 12th, 2026</strong></span>
                     <span>⏰ Time: <strong>7:00 PM IST</strong></span>
-                    <span>⏱ Duration: <strong>45 Hours Course</strong></span>
+                    <span>⏱ Duration: <strong>45 Hours Full Course</strong></span>
                 </div>
 
                 <div class="info-white-card">
                     <h3>🎯 Trending 2026 Core Curriculum</h3>
                     <ul class="custom-check-list">
-                        <li><strong>Joule Studio Agent Builder:</strong> Workflows & RAG configurations.</li>
+                        <li><strong>Joule Studio Agent Builder & RAP:</strong> Workflows & RAG configurations.</li>
                         <li><strong>SAP Document AI:</strong> Extracting business data from unstructured documents.</li>
                         <li><strong>Advanced RAP Architecture:</strong> Master unmanaged scenarios & locking mechanisms.</li>
                         <li><strong>Clean Core Extensibility:</strong> Custom behaviors and cloud extensions.</li>
@@ -514,7 +523,7 @@
                 </div>
             </div>
 
-            <!-- Right Circular Constellation Diagram Side (Optimized Spacing) -->
+            <!-- Right Orbital Graph Column -->
             <div class="diagram-pane">
                 <div class="constellation-wrapper">
                     <div class="orbit-line"></div>
@@ -524,7 +533,6 @@
                         <span>AGENTIC AI</span>
                     </div>
 
-                    <!-- Orbit Satellite Items Symmetrically Remapped -->
                     <div class="satellite-node pos-1"><div class="icon">🤖</div><div class="lbl">Agentic<br>Workflows</div></div>
                     <div class="satellite-node pos-2"><div class="icon">📄</div><div class="lbl">Document<br>AI</div></div>
                     <div class="satellite-node pos-3"><div class="icon">⚙️</div><div class="lbl">BTP<br>Cockpit</div></div>
@@ -533,14 +541,13 @@
                     <div class="satellite-node pos-6"><div class="icon">📊</div><div class="lbl">Fiori<br>UI</div></div>
                 </div>
 
-                <!-- Floating Exploding Highlight Seat Badge -->
                 <div class="exploding-seats-badge">
                     LIMITED SEATS<br>AVAILABLE!
                 </div>
             </div>
         </main>
 
-        <!-- Lower Value Icon Highlights Row -->
+        <!-- Lower Value Row Component Highlights -->
         <section class="features-grid-ribbon">
             <div class="feature-icon-card">
                 <div class="round-icon-circle">🔍</div>
@@ -564,9 +571,9 @@
             </div>
         </section>
 
-        <!-- Bottom Actions Bar Strip -->
+        <!-- FIXED: Bottom conversion footer aligned with Masterclass criteria -->
         <footer class="action-footer-strip">
-            <div class="cta-message-box">Message "JOULE DEMO" to get your demo link!</div>
+            <div class="cta-message-box">⚡ Spots are strictly limited! Click link below to watch Free Demos!</div>
             <div class="contact-channel-flex">
                 <div class="channel-pill">📞 Call: <strong>+91 8884473675</strong></div>
                 <div class="channel-pill">💬 WhatsApp: <strong>8884473675</strong></div>
