@@ -13,7 +13,7 @@
             --bg-light: #FFFFFF;
             --text-main: #1E293B;
             --success-green: #16A34A;
-            --card-shadow: 0 15px 35px rgba(0, 102, 204, 0.08);
+            --card-shadow: 0 12px 30px rgba(0, 102, 204, 0.06);
         }
 
         * {
@@ -36,7 +36,7 @@
             padding: 10px;
         }
 
-        /* Marketing Canvas Wrapper */
+        /* Premium Marketing Canvas Wrapper */
         .poster-canvas {
             width: 100%;
             max-width: 1200px;
@@ -44,13 +44,13 @@
             background: var(--bg-light);
             position: relative;
             border-radius: 20px;
-            box-shadow: 0 25px 60 rgba(0, 34, 68, 0.12);
+            box-shadow: 0 25px 60px rgba(0, 34, 68, 0.12);
             display: flex;
             flex-direction: column;
             overflow: hidden;
         }
 
-        /* Abstract Blue Vector Wave Background */
+        /* Abstract Blue Background Wave Gradient */
         .poster-canvas::before {
             content: "";
             position: absolute;
@@ -65,7 +65,7 @@
 
         /* Top Header Component Layout */
         .header-section {
-            padding: 25px 40px 5px 40px;
+            padding: 20px 40px 5px 40px;
             display: flex;
             justify-content: space-between;
             align-items: flex-start;
@@ -76,7 +76,6 @@
             max-width: 70%;
         }
 
-        /* FIXED: Updated marketing ribbon configuration to match Masterclass requirement */
         .live-masterclass-ribbon {
             background: var(--dark-navy);
             color: white;
@@ -93,12 +92,12 @@
         }
 
         .title-h1 {
-            font-size: 2.5rem;
+            font-size: 2.4rem;
             font-weight: 900;
             color: var(--dark-navy);
             line-height: 1.1;
             letter-spacing: -0.5px;
-            margin-bottom: 6px;
+            margin-bottom: 4px;
         }
 
         .title-h1 span {
@@ -109,18 +108,17 @@
         }
 
         .subtitle-p {
-            font-size: 1rem;
+            font-size: 0.95rem;
             color: #475569;
             font-weight: 600;
         }
 
-        /* Floating Career Callout Bubble */
         .career-callout {
             background: linear-gradient(135deg, var(--sky-blue) 0%, var(--sap-blue) 100%);
             color: white;
             padding: 12px 22px;
             border-radius: 24px 24px 0 24px;
-            font-size: 1rem;
+            font-size: 0.95rem;
             font-weight: 800;
             text-align: center;
             transform: rotate(3deg);
@@ -128,14 +126,13 @@
             max-width: 240px;
             line-height: 1.2;
         }
-
-        /* Two-Column Matrix Workspace */
+        /* Two-Column Matrix Workspace Workspace */
         .workspace-grid {
             flex: 1;
             display: grid;
-            grid-template-columns: 1.15fr 0.85fr;
-            gap: 30px;
-            padding: 10px 40px 15px 40px;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 24px;
+            padding: 5px 40px 10px 40px;
             align-items: center;
             z-index: 2;
             overflow: hidden;
@@ -144,56 +141,69 @@
         .left-content-pane {
             display: flex;
             flex-direction: column;
-            gap: 14px;
+            gap: 12px;
+            height: 100%;
+            justify-content: center;
         }
 
-        /* Session Time Parameters Strip */
-        .datetime-strip {
-            background: #F0F7FF;
-            border: 1px dashed var(--sky-blue);
-            border-radius: 12px;
-            padding: 10px 18px;
-            display: flex;
-            justify-content: space-between;
-            font-size: 0.9rem;
-            font-weight: 700;
-            color: var(--dark-navy);
+        /* NEW CONTENT CHUNK: Stylized Dotted Target Warning Alert Box Style */
+        .theory-warning-banner {
+            background: #FFF5ED;
+            border: 1.5px dashed var(--accent-orange);
+            border-radius: 10px;
+            padding: 10px 14px;
+            text-align: left;
+            box-shadow: 0 4px 15px rgba(255, 51, 0, 0.05);
         }
 
-        .datetime-strip span strong {
-            color: var(--sap-blue);
+        .theory-warning-banner h3 {
+            color: var(--accent-orange);
+            font-size: 0.92rem;
+            font-weight: 800;
+            margin-bottom: 2px;
+            text-transform: uppercase;
+            letter-spacing: 0.2px;
         }
 
-        /* Info Display Content Cards */
+        .theory-warning-banner p {
+            font-size: 0.82rem;
+            line-height: 1.35;
+            color: #1E293B;
+            font-weight: 600;
+        }
+
+        /* NEW CONTENT CHUNK: Unified Custom Check Benefits List Card Container */
         .info-white-card {
             background: #FFFFFF;
-            border-radius: 16px;
-            padding: 20px;
+            border-radius: 14px;
+            padding: 14px 18px;
             box-shadow: var(--card-shadow);
             border: 1px solid rgba(0,102,204,0.04);
         }
 
         .info-white-card h3 {
-            font-size: 1.05rem;
+            font-size: 1rem;
             color: var(--dark-navy);
-            margin-bottom: 12px;
+            margin-bottom: 8px;
             border-bottom: 2px solid #F1F5F9;
-            padding-bottom: 6px;
+            padding-bottom: 4px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
         }
 
-        /* FIXED: Restored clean custom green checkmark formatting rules */
         .custom-check-list {
             list-style: none;
         }
 
         .custom-check-list li {
             position: relative;
-            padding-left: 22px;
-            margin-bottom: 8px;
-            font-size: 0.88rem;
-            color: #334155;
+            padding-left: 20px;
+            margin-bottom: 6px;
+            font-size: 0.8rem;
+            color: #475569;
             font-weight: 500;
-            line-height: 1.4;
+            line-height: 1.35;
         }
 
         .custom-check-list li strong {
@@ -207,42 +217,50 @@
             left: 0;
             color: var(--success-green);
             font-weight: 900;
-            font-size: 1.05rem;
+            font-size: 0.95rem;
         }
 
-        /* Mentor Profile Summary Row Element */
+        /* NEW CONTENT CHUNK: Upgraded Mentor Panel Profile Element Styles */
         .mentor-profile-bar {
             display: flex;
-            align-items: center;
-            gap: 14px;
+            flex-direction: column;
+            gap: 8px;
             background: #F8FAFC;
-            padding: 10px 14px;
+            padding: 12px 14px;
             border-radius: 12px;
             border: 1px solid #E2E8F0;
         }
 
+        .mentor-header-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid #E2E8F0;
+            padding-bottom: 6px;
+        }
+
+        .mentor-title-area {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
         .avatar-box {
-            width: 46px;
-            height: 46px;
+            width: 36px;
+            height: 36px;
             background: linear-gradient(135deg, #E0F2FE 0%, #BAE6FD 100%);
-            border: 2px solid var(--sky-blue);
+            border: 1.5px solid var(--sky-blue);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.3rem;
+            font-size: 1.1rem;
         }
 
         .mentor-meta h4 {
-            font-size: 0.9rem;
+            font-size: 0.88rem;
             color: var(--dark-navy);
             font-weight: 800;
-        }
-
-        .mentor-meta p {
-            font-size: 0.78rem;
-            color: #64748B;
-            margin-bottom: 3px;
         }
 
         .tag-row {
@@ -253,14 +271,26 @@
         .tag-pill {
             background: #FFFFFF;
             border: 1px solid #CBD5E1;
-            padding: 1px 6px;
+            padding: 2px 8px;
             border-radius: 4px;
-            font-size: 0.7rem;
+            font-size: 0.72rem;
             font-weight: 700;
             color: var(--sap-blue);
+            display: flex;
+            align-items: center;
+            gap: 4px;
         }
 
-        /* Right Side: Orbital Connected Constellation Layout mapping */
+        .mentor-bio-text {
+            font-size: 0.8rem;
+            color: #334155;
+            line-height: 1.4;
+            font-weight: 500;
+            border-left: 3px solid var(--sap-blue);
+            padding-left: 10px;
+            font-style: italic;
+        }
+        /* Right Side: Symmetrical Connected Constellation Panel Graphics */
         .diagram-pane {
             position: relative;
             display: flex;
@@ -271,27 +301,25 @@
 
         .constellation-wrapper {
             position: relative;
-            width: 400px;
-            height: 400px;
+            width: 360px;
+            height: 360px;
             display: flex;
             align-items: center;
             justify-content: center;
         }
 
-        /* Dashed Orbit Trace Ring Vector */
         .orbit-line {
             position: absolute;
-            border: 2px dashed rgba(0, 102, 204, 0.12);
+            border: 2px dashed rgba(0, 102, 204, 0.1);
             border-radius: 50%;
             width: 82%;
             height: 82%;
             pointer-events: none;
         }
 
-        /* Central Brand Platform Hub Node */
         .central-hub-node {
-            width: 120px;
-            height: 120px;
+            width: 110px;
+            height: 110px;
             background: radial-gradient(circle, var(--sky-blue) 0%, var(--sap-blue) 100%);
             color: white;
             border-radius: 50%;
@@ -301,88 +329,85 @@
             justify-content: center;
             text-align: center;
             font-weight: 900;
-            font-size: 0.95rem;
-            box-shadow: 0 15px 35px rgba(0, 102, 204, 0.3);
+            font-size: 0.9rem;
+            box-shadow: 0 12px 30px rgba(0, 102, 204, 0.25);
             z-index: 5;
             border: 4px solid #FFFFFF;
             line-height: 1.2;
         }
 
         .central-hub-node span {
-            font-size: 0.65rem;
+            font-size: 0.62rem;
             font-weight: 700;
             letter-spacing: 0.5px;
-            opacity: 0.95;
-            margin-top: 2px;
+            opacity: 0.9;
+            margin-top: 1px;
         }
 
-        /* Satellite Orbital Circular Nodes Spacing Matrix */
         .satellite-node {
             position: absolute;
-            width: 82px;
-            height: 82px;
+            width: 76px;
+            height: 76px;
             background: #FFFFFF;
-            border: 2.5px solid var(--sky-blue);
+            border: 2px solid var(--sky-blue);
             border-radius: 50%;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
             text-align: center;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.04);
             z-index: 4;
             transition: all 0.3s ease;
         }
 
         .satellite-node:hover {
-            transform: scale(1.06);
+            transform: scale(1.05);
             border-color: var(--accent-orange);
-            box-shadow: 0 10px 25px rgba(255,51,0,0.15);
+            box-shadow: 0 8px 20px rgba(255,51,0,0.12);
         }
 
-        .satellite-node .icon { font-size: 1.1rem; margin-bottom: 2px; }
-        .satellite-node .lbl { font-size: 0.65rem; font-weight: 800; color: var(--dark-navy); line-height: 1.15; }
+        .satellite-node .icon { font-size: 1.05rem; margin-bottom: 1px; }
+        .satellite-node .lbl { font-size: 0.62rem; font-weight: 800; color: var(--dark-navy); line-height: 1.15; }
 
-        /* Space Coordinates for Symmetrical Positioning */
-        .pos-1 { top: -5px; left: 159px; }
-        .pos-2 { top: 70px; right: -5px; }
-        .pos-3 { bottom: 70px; right: -5px; }
-        .pos-4 { bottom: -5px; left: 159px; }
-        .pos-5 { bottom: 70px; left: -5px; }
-        .pos-6 { top: 70px; left: -5px; }
+        /* Perfect Spatial Ring Radii Coordinates */
+        .pos-1 { top: -8px; left: 142px; }
+        .pos-2 { top: 60px; right: -8px; }
+        .pos-3 { bottom: 60px; right: -8px; }
+        .pos-4 { bottom: -8px; left: 142px; }
+        .pos-5 { bottom: 60px; left: -8px; }
+        .pos-6 { top: 60px; left: -8px; }
 
-        /* Floating Exploding Red Seat Alert Badge */
         .exploding-seats-badge {
             position: absolute;
-            bottom: 10px;
-            right: -25px;
+            bottom: 0px;
+            right: -20px;
             background: linear-gradient(135deg, #FF3300 0%, #CC0000 100%);
             color: white;
-            padding: 12px;
+            padding: 10px;
             border-radius: 50%;
-            width: 95px;
-            height: 95px;
+            width: 88px;
+            height: 88px;
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
             font-weight: 900;
-            font-size: 0.72rem;
+            font-size: 0.68rem;
             line-height: 1.2;
             transform: rotate(-10deg);
-            box-shadow: 0 10px 25px rgba(255, 51, 0, 0.35);
+            box-shadow: 0 10px 25px rgba(255, 51, 0, 0.3);
             z-index: 6;
-            border: 3px dashed #FFFFFF;
+            border: 2px dashed #FFFFFF;
             animation: bounce 3s infinite alternate;
         }
-
         /* Lower Features Graphic High-Value Highlights Row */
         .features-grid-ribbon {
             background: #F8FAFC;
             border-top: 1px solid #E2E8F0;
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            padding: 12px 40px;
+            padding: 10px 40px;
             gap: 20px;
             z-index: 2;
         }
@@ -395,31 +420,30 @@
         }
 
         .round-icon-circle {
-            width: 40px;
-            height: 40px;
+            width: 36px;
+            height: 36px;
             background: linear-gradient(135deg, #E0F2FE 0%, #00A3FF 100%);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.1rem;
+            font-size: 1rem;
             color: white;
-            margin-bottom: 4px;
-            box-shadow: 0 4px 10px rgba(0, 163, 255, 0.15);
+            margin-bottom: 2px;
+            box-shadow: 0 4px 8px rgba(0, 163, 255, 0.12);
         }
 
         .feature-icon-card h4 {
-            font-size: 0.82rem;
+            font-size: 0.8rem;
             color: var(--dark-navy);
             font-weight: 800;
-            margin-bottom: 2px;
+            margin-bottom: 1px;
         }
 
         .feature-icon-card p {
-            font-size: 0.72rem;
+            font-size: 0.7rem;
             color: #64748B;
-            line-height: 1.25;
-            font-weight: 500;
+            line-height: 1.2;
         }
 
         /* Bottom Sticky Conversion Footer Bar */
@@ -432,7 +456,6 @@
             z-index: 2;
         }
 
-        /* FIXED: Updated design parameters for Masterclass CTA messaging rules */
         .action-footer-strip .cta-message-box {
             background: #FFCC00;
             color: var(--dark-navy);
@@ -457,14 +480,8 @@
             font-weight: 700;
         }
 
-        .channel-pill strong {
-            color: #FFCC00;
-        }
-
-        .channel-pill a {
-            color: white;
-            text-decoration: none;
-        }
+        .channel-pill strong { color: #FFCC00; }
+        .channel-pill a { color: white; text-decoration: none; }
 
         @keyframes bounce {
             0% { transform: translateY(0) rotate(-10deg); }
@@ -473,53 +490,58 @@
     </style>
 </head>
 <body>
-
     <div class="poster-canvas">
         
         <!-- Header Section -->
         <header class="header-section">
             <div class="brand-container">
-                <!-- FIXED: Changed badge theme content to Masterclass -->
                 <span class="live-masterclass-ribbon">🌐 Online Live Masterclass</span>
                 <h1 class="title-h1">SAP Joule <span>Agentic AI & RAP</span></h1>
-                <p class="subtitle-p">Build. Extend. Innovate. Your Next Step in SAP Technology!</p>
+                <p class="subtitle-p">Master Production-Grade Workflows, Document AI & Clean Core Extensibility Architecture.</p>
             </div>
             <div class="career-callout">
                 Shape Your Future<br>with SAP Joule!
             </div>
         </header>
 
-        <!-- Central Matrix View Space -->
+        <!-- Central Matrix Workspace View Space -->
         <main class="workspace-grid">
             
-            <!-- Left Info Content Column -->
+            <!-- Left Info Content Pane Column -->
             <div class="left-content-pane">
-                <div class="datetime-strip">
-                    <span>📅 Date: <strong>October 12th, 2026</strong></span>
-                    <span>⏰ Time: <strong>7:00 PM IST</strong></span>
-                    <span>⏱ Duration: <strong>45 Hours Full Course</strong></span>
+                
+                <!-- FIXED: Injected the new dynamic warning dotted block -->
+                <div class="theory-warning-banner">
+                    <h3>💥 STOP LEARNING SAP THEORY. START BUILDING REAL-TIME PROJECTS! 💥</h3>
+                    <p>If you aren't building Agentic AI workflows and mastering SAP Build/RAP in 2026, you are leaving high-paying MNC opportunities on the table. Transform from a Traditional ABAPer into a highly-certified BTP Cloud Architect!</p>
                 </div>
 
+                <!-- FIXED: Injected the new comprehensive 4-bullet Master benefits card -->
                 <div class="info-white-card">
-                    <h3>🎯 Trending 2026 Core Curriculum</h3>
+                    <h3>🔷 What You Get Inside This Masterclass?</h3>
                     <ul class="custom-check-list">
-                        <li><strong>Joule Studio Agent Builder & RAP:</strong> Workflows & RAG configurations.</li>
-                        <li><strong>SAP Document AI:</strong> Extracting business data from unstructured documents.</li>
-                        <li><strong>Advanced RAP Architecture:</strong> Master unmanaged scenarios & locking mechanisms.</li>
-                        <li><strong>Clean Core Extensibility:</strong> Custom behaviors and cloud extensions.</li>
+                        <li><strong>3 Live, Production-Quality Projects:</strong> Built completely from scratch during live class sessions inside the RAP framework.</li>
+                        <li><strong>100% Clean Core Compliant:</strong> Master the precise modern architectural skills that elite MNC networks look for.</li>
+                        <li><strong>Job-Ready Code Portfolio:</strong> Walk away with production repositories and cloud system architecture diagrams to present confidently.</li>
+                        <li><strong>Interactive Career Strategy:</strong> Receive structural resume reviews and architecture mock sessions tailored for modern hiring.</li>
                     </ul>
                 </div>
 
+                <!-- FIXED: Injected the new expanded 4,000+ student Mentor authority block -->
                 <div class="mentor-profile-bar">
-                    <div class="avatar-box">👨‍💻</div>
-                    <div class="mentor-meta">
-                        <h4>Meet Your Trainer: Bobby</h4>
-                        <p>Senior SAP Consultant working at a Top MNC</p>
+                    <div class="mentor-header-row">
+                        <div class="mentor-title-area">
+                            <div class="avatar-box">👨‍💻</div>
+                            <h4>Meet Your Mentor</h4>
+                        </div>
                         <div class="tag-row">
-                            <span class="tag-pill">⭐ 16+ Yrs Experience</span>
-                            <span class="tag-pill">🎓 4000+ Alumni</span>
+                            <span class="tag-pill">⭐ 16+ Yrs MNC Experience</span>
+                            <span class="tag-pill">🎓 4000+ Global Students</span>
                         </div>
                     </div>
+                    <p class="mentor-bio-text">
+                        Bobby is a Senior SAP Consultant working at a top MNC with 16+ years of real-time experience and a track reason of driving success for over 4,000+ successful students trained globally!
+                    </p>
                 </div>
             </div>
 
@@ -571,7 +593,7 @@
             </div>
         </section>
 
-        <!-- FIXED: Bottom conversion footer aligned with Masterclass criteria -->
+        <!-- Bottom Actions Bar Strip -->
         <footer class="action-footer-strip">
             <div class="cta-message-box">⚡ Spots are strictly limited! Click link below to watch Free Demos!</div>
             <div class="contact-channel-flex">
